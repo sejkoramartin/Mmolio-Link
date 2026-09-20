@@ -250,7 +250,9 @@ extension ConnectIQTransport: IQAppMessageDelegate {
 
 #else
 
-final class ConnectIQTransport: UnavailableGarminTransport {}
+final class ConnectIQTransport: UnavailableGarminTransport {
+    static let returnURLScheme = "xdrip-garmin"
+}
 
 #endif
 
