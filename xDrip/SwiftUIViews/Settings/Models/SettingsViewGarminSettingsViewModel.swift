@@ -111,7 +111,7 @@ final class SettingsViewGarminSettingsViewModel: NSObject, SettingsViewModelProt
     private func statusIndicator(manager: GarminManager) -> SettingsIndicator? {
         guard UserDefaults.standard.garminWatchEnabled else { return nil }
         return SettingsIndicator(
-            color: manager.isConnected ? ConstantsAppColors.inRange : ConstantsAppColors.urgent
+            color: manager.isConnected ? ConstantsAppColors.normal : ConstantsAppColors.urgent
         )
     }
 
