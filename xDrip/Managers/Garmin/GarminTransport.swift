@@ -14,7 +14,7 @@ protocol GarminTransport: AnyObject {
     func send(_ reading: GarminGlucoseReading, completion: @escaping (Result<Void, GarminTransportError>) -> Void)
 }
 
-final class UnavailableGarminTransport: GarminTransport {
+class UnavailableGarminTransport: GarminTransport {
     private(set) var devices: [GarminDevice] = []
     private(set) var selectedDevice: GarminDevice?
     private(set) var lastSentAt: Date?
