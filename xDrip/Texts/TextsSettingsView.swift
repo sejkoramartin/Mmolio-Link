@@ -78,6 +78,34 @@ class Texts_SettingsView {
         return NSLocalizedString("settingsviews_garminWatchNoReadingSent", tableName: filename, bundle: Bundle.main, value: "—", comment: "no glucose reading has been sent to Garmin yet")
     }()
 
+    static let garminWatchEnabled: String = {
+        return NSLocalizedString("settingsviews_garminWatchEnabled", tableName: filename, bundle: Bundle.main, value: "Enable Garmin Sharing", comment: "toggle for Garmin watch sharing")
+    }()
+
+    static let garminWatchFindWatch: String = {
+        return NSLocalizedString("settingsviews_garminWatchFindWatch", tableName: filename, bundle: Bundle.main, value: "Find / Change Watch", comment: "open Garmin Connect device selection")
+    }()
+
+    static let garminWatchSendTest: String = {
+        return NSLocalizedString("settingsviews_garminWatchSendTest", tableName: filename, bundle: Bundle.main, value: "Send Test Reading", comment: "send the latest glucose reading to Garmin")
+    }()
+
+    static let garminWatchLastError: String = {
+        return NSLocalizedString("settingsviews_garminWatchLastError", tableName: filename, bundle: Bundle.main, value: "Last Error", comment: "last Garmin transport error row")
+    }()
+
+    static let garminWatchDisabled: String = {
+        return NSLocalizedString("settingsviews_garminWatchDisabled", tableName: filename, bundle: Bundle.main, value: "Disabled", comment: "Garmin watch sharing disabled status")
+    }()
+
+    static let garminWatchConnected: String = {
+        return NSLocalizedString("settingsviews_garminWatchConnected", tableName: filename, bundle: Bundle.main, value: "Connected", comment: "Garmin watch connected status")
+    }()
+
+    static let garminWatchDisconnected: String = {
+        return NSLocalizedString("settingsviews_garminWatchDisconnected", tableName: filename, bundle: Bundle.main, value: "Disconnected", comment: "Garmin watch disconnected status")
+    }()
+
     static let osAidLoopShareSectionTitle: String = {
         return NSLocalizedString("settingsviews_osAidLoopShareSectionTitle", tableName: filename, bundle: Bundle.main, value: "OS-AID Share", comment: "settings section title for OS-AID sharing")
     }()
