@@ -700,6 +700,9 @@ import AppIntents
         guard let bgReadingsAccessor = bgReadingsAccessor else {
             fatalError("in setupApplicationData, failed to initialize bgReadings")
         }
+
+        // Garmin needs to be ready before the first background CGM reading arrives.
+        GarminManager.shared.configure(coreDataManager: coreDataManager)
         
         // instantiate calibrations
         calibrationsAccessor = CalibrationsAccessor(coreDataManager: coreDataManager)
@@ -1226,6 +1229,9 @@ import AppIntents
 
                 // Publish the final stored value before optional downstream consumers perform their work.
                 updateLiveActivityAndWidgets(forceRestart: false)
+
+                // Garmin receives the same post-processed latest value that xDrip displays.
+                GarminManager.shared.sendLatestReading()
                 
                 // only if no webOOPEnabled and overruleIsWebOOPEnabled false : if no two calibration exist yet then create calibration request notification, otherwise a bgreading notification and update labels
                 if firstCalibrationForActiveSensor == nil && lastCalibrationForActiveSensor == nil && (!cgmTransmitter.isWebOOPEnabled() && !cgmTransmitter.overruleIsWebOOPEnabled()) {
