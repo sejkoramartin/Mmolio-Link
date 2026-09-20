@@ -1,0 +1,24 @@
+name: Garmin branch compile check
+
+on:
+  push:
+    branches:
+      - feature/garmin-watch
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Resolve Swift packages
+        run: xcodebuild -resolvePackageDependencies -project xdrip.xcodeproj -scheme xdrip
+      - name: Compile xDrip without signing
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project xdrip.xcodeproj \
+            -scheme xdrip \
+            -configuration Debug \
+            -destination 'generic/platform=iOS' \
+            CODE_SIGNING_ALLOWED=NO \
+            build
