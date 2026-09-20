@@ -762,15 +762,16 @@ struct SettingsViewGroupedSettingsViewModel: SettingsViewModelProtocol, Settings
                     id: "sharingServices.garminWatch",
                     title: Texts_SettingsView.garminWatchSectionTitle,
                     detail: {
-                        Texts_SettingsView.garminWatchNotConfigured
+                        garminWatchParentDetail()
+                    },
+                    detailIndicator: {
+                        garminWatchParentIndicator()
                     },
                     settingsScreen: {
                         SettingsScreen(
                             title: Texts_SettingsView.garminWatchSectionTitle,
                             introduction: { Texts_SettingsView.garminWatchIntroduction },
-                            makeSections: { _ in
-                                garminWatchSettingsSections()
-                            }
+                            providers: { [SettingsViewGarminSettingsViewModel()] }
                         )
                     }
                 ),
@@ -873,39 +874,18 @@ struct SettingsViewGroupedSettingsViewModel: SettingsViewModelProtocol, Settings
         )
     }
 
-    /// Initial native xDrip shell for Garmin integration.
-    ///
-    /// These rows intentionally expose state only. Pairing and test-send actions will be
-    /// enabled when the Connect IQ transport is wired in, so the Settings UI never implies
-    /// that a watch is usable before the transport exists.
-    private static func garminWatchSettingsSections() -> [SettingsSectionModel] {
-        [
-            SettingsSectionModel(id: 0) {
-                SettingsSection(
-                    title: Texts_SettingsView.garminWatchConnectionSectionTitle,
-                    rows: [
-                        SettingsRow(
-                            id: "garminWatch.status",
-                            title: Texts_SettingsView.garminWatchStatus,
-                            detail: Texts_SettingsView.garminWatchNotConfigured,
-                            accessory: .none
-                        ),
-                        SettingsRow(
-                            id: "garminWatch.device",
-                            title: Texts_SettingsView.garminWatchDevice,
-                            detail: Texts_SettingsView.garminWatchNoDevice,
-                            accessory: .none
-                        ),
-                        SettingsRow(
-                            id: "garminWatch.lastReadingSent",
-                            title: Texts_SettingsView.garminWatchLastReadingSent,
-                            detail: Texts_SettingsView.garminWatchNoReadingSent,
-                            accessory: .none
-                        )
-                    ]
-                )
-            }
-        ]
+    private static func garminWatchParentDetail() -> String? {
+        guard UserDefaults.standard.garminWatchEnabled else { return nil }
+        let manager = GarminManager.shared
+        guard manager.selectedDevice != nil else { return Texts_SettingsView.garminWatchNotConfigured }
+        return manager.isConnected ? Texts_SettingsView.garminWatchConnected : Texts_SettingsView.garminWatchDisconnected
+    }
+
+    private static func garminWatchParentIndicator() -> SettingsIndicator? {
+        guard UserDefaults.standard.garminWatchEnabled else { return nil }
+        return SettingsIndicator(
+            color: GarminManager.shared.isConnected ? ConstantsAppColors.normal : ConstantsAppColors.urgent
+        )
     }
 
     /// Shows an enabled summary while leaving disabled parent rows uncluttered.
