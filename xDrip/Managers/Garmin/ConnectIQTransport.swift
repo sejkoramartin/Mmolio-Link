@@ -5,9 +5,9 @@ import OSLog
 import ConnectIQ
 
 final class ConnectIQTransport: NSObject, GarminTransport {
-    /// Kept compatible with the receiver app already used by MedProbe while the
-    /// xDrip-specific Garmin app/watch face is being developed.
+    /// Existing Mmolio Bridge identity; never replace it with the data field ID.
     static let watchAppID = "a1b2c3d4e5f647589a0b1c2d3e4f5061"
+    static let dataFieldAppID = "7ca56fd800634cab90f28d5e72be2e05"
 
     static var watchAppUUID: UUID? {
         ConnectIQAppID.uuid(from: watchAppID)
@@ -30,9 +30,17 @@ final class ConnectIQTransport: NSObject, GarminTransport {
         didSet { notifyStateChanged() }
     }
 
-    private var policy = GarminSendPolicy()
+    private lazy var delivery = GarminDeliveryQueue { [weak self] target, reading, completion in
+        guard let self else {
+            completion(.failure(.deviceNotConnected))
+            return
+        }
+        self.transmit(reading, to: target, completion: completion)
+    }
+    private var selectionGeneration = 0
     private var knownDevices: [UInt64: IQDevice] = [:]
     private var watchApps: [UInt64: IQApp] = [:]
+    private var dataFieldApps: [UInt64: IQApp] = [:]
 
     private static let selectedDeviceKey = "garminWatch.selectedDevice"
     private static let knownDevicesKey = "garminWatch.knownDevices"
@@ -47,6 +55,8 @@ final class ConnectIQTransport: NSObject, GarminTransport {
     }
 
     func stop() {
+        selectionGeneration += 1
+        delivery.reset()
         for device in knownDevices.values {
             ConnectIQ.sharedInstance().unregister(forDeviceEvents: device, delegate: self)
         }
@@ -71,49 +81,48 @@ final class ConnectIQTransport: NSObject, GarminTransport {
     func select(_ device: GarminDevice?) {
         selectedDevice = device
         UserDefaults.standard.set(Int64(bitPattern: device?.id ?? 0), forKey: Self.selectedDeviceKey)
-        policy.reset()
+        selectionGeneration += 1
+        delivery.reset()
     }
 
     func send(_ reading: GarminGlucoseReading,
               completion: @escaping (Result<Void, GarminTransportError>) -> Void) {
-        switch policy.decide(reading) {
-        case .skipDuplicate, .skipOlder:
-            completion(.success(()))
+        if !Thread.isMainThread {
+            DispatchQueue.main.async { [self] in send(reading, completion: completion) }
             return
-        case .send:
-            break
         }
+        delivery.send(reading, completion: completion)
+    }
 
+    private func transmit(_ reading: GarminGlucoseReading, to target: GarminDestination,
+                          completion: @escaping GarminDeliveryQueue.Completion) {
         guard let selectedDevice else {
-            fail(.noDeviceSelected, completion)
+            finish(.failure(.noDeviceSelected), target: target, completion: completion)
             return
         }
         guard let device = knownDevices[selectedDevice.id],
-              let app = watchApps[selectedDevice.id] else {
-            fail(.appNotInstalled, completion)
+              let app = (target == .bridge ? watchApps : dataFieldApps)[selectedDevice.id] else {
+            finish(.failure(.appNotInstalled), target: target, completion: completion)
             return
         }
         guard ConnectIQ.sharedInstance().getDeviceStatus(device) == .connected else {
-            fail(.deviceNotConnected, completion)
+            finish(.failure(.deviceNotConnected), target: target, completion: completion)
             return
         }
 
+        let generation = selectionGeneration
         ConnectIQ.sharedInstance().sendMessage(
             GarminMessage(reading: reading).encoded(),
             to: app,
             progress: nil
         ) { [weak self] result in
             DispatchQueue.main.async {
-                guard let self else { return }
-
-                if result == .success {
-                    self.lastSentAt = Date()
-                    self.lastError = nil
-                    completion(.success(()))
-                } else {
-                    self.policy.reset()
-                    self.fail(.sendFailed(Self.describe(result)), completion)
+                guard let self, self.selectionGeneration == generation else {
+                    completion(.failure(.deviceNotConnected))
+                    return
                 }
+                self.finish(result == .success ? .success(()) : .failure(.sendFailed(Self.describe(result))),
+                            target: target, completion: completion)
             }
         }
     }
@@ -173,6 +182,9 @@ final class ConnectIQTransport: NSObject, GarminTransport {
                 watchApps[id] = app
                 ConnectIQ.sharedInstance().register(forAppMessages: app, delegate: self)
             }
+            if let fieldUUID = ConnectIQAppID.uuid(from: Self.dataFieldAppID) {
+                dataFieldApps[id] = IQApp(uuid: fieldUUID, store: nil, device: device)
+            }
         }
 
         rememberKnownDevices()
@@ -204,11 +216,23 @@ final class ConnectIQTransport: NSObject, GarminTransport {
         }
     }
 
-    private func fail(_ error: GarminTransportError,
-                      _ completion: @escaping (Result<Void, GarminTransportError>) -> Void) {
-        lastError = error
-        trace("Garmin: %{public}@", log: log, category: "Garmin", type: .error, error.userFacingDescription)
-        completion(.failure(error))
+    private func finish(_ result: Result<Void, GarminTransportError>, target: GarminDestination,
+                        completion: GarminDeliveryQueue.Completion) {
+        if target == .bridge {
+            switch result {
+            case .success:
+                lastSentAt = Date()
+                lastError = nil
+            case .failure(let error):
+                lastError = error
+                trace("Garmin: %{public}@", log: log, category: "Garmin", type: .error, error.userFacingDescription)
+            }
+        } else if case .failure(let error) = result {
+            // The field is optional and may not be installed or running. Its
+            // delivery result must not replace the existing Bridge status.
+            trace("Mmolio DataField: %{public}@", log: log, category: "Garmin", type: .debug, error.userFacingDescription)
+        }
+        completion(result)
     }
 
     private func notifyStateChanged() {

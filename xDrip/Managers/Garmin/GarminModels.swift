@@ -125,3 +125,79 @@ enum ConnectIQAppID {
         hyphenated(identifier).flatMap(UUID.init(uuidString:))
     }
 }
+
+enum GarminDestination: Hashable {
+    case bridge
+    case dataField
+}
+
+/// Serialize the two deliveries so they cannot compete for the watch connection.
+/// Each destination has its own duplicate policy: a missing data field must not
+/// prevent Bridge delivery, and a failed Bridge must not prevent activity data.
+final class GarminDeliveryQueue {
+    typealias Completion = (Result<Void, GarminTransportError>) -> Void
+    typealias Sender = (GarminDestination, GarminGlucoseReading, @escaping Completion) -> Void
+
+    private struct Request {
+        let reading: GarminGlucoseReading
+        let generation: Int
+        let completion: Completion
+    }
+
+    private let sender: Sender
+    private var policies: [GarminDestination: GarminSendPolicy] = [:]
+    private var pending: [Request] = []
+    private var running = false
+    private var generation = 0
+
+    init(sender: @escaping Sender) { self.sender = sender }
+
+    /// Invalidate queued work and callbacks after selecting another watch or stopping.
+    func reset() {
+        generation += 1
+        policies.removeAll()
+    }
+
+    func send(_ reading: GarminGlucoseReading, completion: @escaping Completion) {
+        pending.append(Request(reading: reading, generation: generation, completion: completion))
+        processNext()
+    }
+
+    private func processNext() {
+        guard !running, !pending.isEmpty else { return }
+        running = true
+        let request = pending.removeFirst()
+        deliver(.bridge, request: request) { [self] bridgeResult in
+            // Attempt the optional destination even if Bridge failed. Keeping the
+            // completion until both callbacks also keeps GarminBackgroundWork alive.
+            deliver(.dataField, request: request) { [self] _ in
+                let result: Result<Void, GarminTransportError> = request.generation == generation
+                    ? bridgeResult : .failure(.deviceNotConnected)
+                request.completion(result)
+                running = false
+                processNext()
+            }
+        }
+    }
+
+    private func deliver(_ target: GarminDestination, request: Request, completion: @escaping Completion) {
+        guard request.generation == generation else {
+            completion(.failure(.deviceNotConnected))
+            return
+        }
+        var policy = policies[target] ?? GarminSendPolicy()
+        switch policy.decide(request.reading) {
+        case .skipDuplicate, .skipOlder:
+            completion(.success(()))
+            return
+        case .send:
+            policies[target] = policy
+        }
+        sender(target, request.reading) { [self] result in
+            if request.generation == generation, case .failure = result {
+                policies[target] = GarminSendPolicy()
+            }
+            completion(result)
+        }
+    }
+}

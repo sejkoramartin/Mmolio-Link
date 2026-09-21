@@ -10,6 +10,8 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
+      - name: Test Mmolio delivery routing
+        run: bash tests/garmin-delivery/run.sh
       - name: Resolve Swift packages
         run: xcodebuild -resolvePackageDependencies -project xdrip.xcodeproj -scheme xdrip
       - name: Compile xDrip without signing
