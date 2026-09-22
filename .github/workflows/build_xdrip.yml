@@ -175,6 +175,7 @@ jobs:
       
       - name: Checkout Repo for syncing
         if: |
+          github.ref_name != 'feature/garmin-watch' &&
           needs.check_alive_and_permissions.outputs.WORKFLOW_PERMISSION == 'true' &&
           vars.SCHEDULED_SYNC != 'false'
         uses: actions/checkout@v5
@@ -184,6 +185,7 @@ jobs:
       
       - name: Sync upstream changes
         if: | # do not run the upstream sync action on the upstream repository
+          github.ref_name != 'feature/garmin-watch' &&
           needs.check_alive_and_permissions.outputs.WORKFLOW_PERMISSION == 'true' &&
           vars.SCHEDULED_SYNC != 'false' && github.repository_owner != 'JohanDegraeve'
         id: sync
