@@ -6,6 +6,7 @@
 //  Copyright © 2026 Johan Degraeve. All rights reserved.
 //
 
+import CoreData
 import XCTest
 @testable import xdrip
 
