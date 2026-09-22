@@ -1156,6 +1156,11 @@ import AppIntents
                         }
                         
                         let newReading = calibrator.createNewBgReading(rawData: glucose.glucoseLevelRaw, timeStamp: glucose.timeStamp, sensor: activeSensor, last3Readings: &last3ReadingsForNewReading, lastCalibrationsForActiveSensorInLastXDays: &lastCalibrationsForActiveSensorInLastXDays, firstCalibration: firstCalibrationForActiveSensor, lastCalibration: lastCalibrationForActiveSensor, deviceName: self.getCGMTransmitterDeviceName(for: cgmTransmitter), nsManagedObjectContext: coreDataManager.mainManagedObjectContext)
+                        // G7 supplies its own trend in the same packet as the reading. Persist
+                        // that category so all display surfaces, including Garmin, agree.
+                        if cgmTransmitter.cgmTransmitterType() == .dexcomG7 {
+                            newReading.sensorTrendOrdinal = glucose.slopeOrdinal.map(NSNumber.init(value:))
+                        }
 
                         if let backfilledAt = glucose.backfilledAt ?? (isHistoricalGapFill ? Date() : nil),
                            backfilledAt.timeIntervalSince(glucose.timeStamp) > ConstantsBloodGlucose.minimumSecondsToConsiderAsBackfillDelay {

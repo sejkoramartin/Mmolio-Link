@@ -1055,6 +1055,7 @@ class CGMG7Transmitter: BluetoothTransmitter, CGMTransmitter, DexcomG7AuthSessio
         processGlucose(
             calculatedValue: message.calculatedValue,
             algorithmStatus: message.algorithmStatus,
+            sensorTrendOrdinal: message.sensorTrendOrdinal,
             sensorAge: message.sensorAge,
             timeStamp: message.timeStamp,
             transmitterTime: message.transmitterTime
@@ -1095,6 +1096,7 @@ class CGMG7Transmitter: BluetoothTransmitter, CGMTransmitter, DexcomG7AuthSessio
         processGlucose(
             calculatedValue: glucose.calculatedValue,
             algorithmStatus: glucose.algorithmStatus,
+            sensorTrendOrdinal: glucose.sensorTrendOrdinal,
             sensorAge: sensorAge,
             timeStamp: timeStamp,
             transmitterTime: glucose.transmitterTime
@@ -1104,6 +1106,7 @@ class CGMG7Transmitter: BluetoothTransmitter, CGMTransmitter, DexcomG7AuthSessio
     private func processGlucose(
         calculatedValue: Double,
         algorithmStatus: DexcomAlgorithmState,
+        sensorTrendOrdinal: Int,
         sensorAge: TimeInterval,
         timeStamp: Date,
         transmitterTime: UInt32
@@ -1141,6 +1144,7 @@ class CGMG7Transmitter: BluetoothTransmitter, CGMTransmitter, DexcomG7AuthSessio
         }
 
         let glucose = GlucoseData(timeStamp: timeStamp, glucoseLevelRaw: calculatedValue)
+        glucose.slopeOrdinal = sensorTrendOrdinal
         trace(
             "G7 connection cycle summary: value=%{public}@ mg/dL at %{public}@ cid=%{public}d mode=%{public}@",
             log: log,

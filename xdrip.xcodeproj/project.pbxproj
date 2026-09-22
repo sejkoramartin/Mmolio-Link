@@ -1272,6 +1272,7 @@
 		4F3100143007000100000001 /* BatteryHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHistoryView.swift; sourceTree = "<group>"; };
 		4F3100153007000100000001 /* BatteryHistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHistoryTests.swift; sourceTree = "<group>"; };
 		4F3100313007000100000001 /* xdrip v31.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "xdrip v31.xcdatamodel"; sourceTree = "<group>"; };
+		4F3200313009000100000001 /* xdrip v32.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "xdrip v32.xcdatamodel"; sourceTree = "<group>"; };
 		4F3200023008000100000001 /* BgReadingTrendTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BgReadingTrendTests.swift; sourceTree = "<group>"; };
 		50E2401E5ED94424A2FEC5E8 /* xDrip Tests/TherapyMetricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "xDrip Tests/TherapyMetricsTests.swift"; sourceTree = SOURCE_ROOT; };
 		5A0100013015000100000001 /* GlucoseRangeDistribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlucoseRangeDistribution.swift; sourceTree = "<group>"; };
@@ -6158,6 +6159,7 @@
 		F85FF3C2252D0C32004E6FF1 /* xdrip.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				4F3200313009000100000001 /* xdrip v32.xcdatamodel */,
 				4F3100313007000100000001 /* xdrip v31.xcdatamodel */,
 				4F3000313006000100000001 /* xdrip v30.xcdatamodel */,
 				4F2900313005000100000001 /* xdrip v29.xcdatamodel */,
@@ -6179,7 +6181,7 @@
 				F85FF3CB252F9C9A004E6FF1 /* xdrip v13.xcdatamodel */,
 				F85FF3C3252D0C32004E6FF1 /* xdrip v12.xcdatamodel */,
 			);
-			currentVersion = 4F3100313007000100000001 /* xdrip v31.xcdatamodel */;
+			currentVersion = 4F3200313009000100000001 /* xdrip v32.xcdatamodel */;
 			path = xdrip.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

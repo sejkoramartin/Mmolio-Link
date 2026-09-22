@@ -12,6 +12,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Test Mmolio delivery routing
         run: bash tests/garmin-delivery/run.sh
+      - name: Test Dexcom G7 sensor trend packets
+        run: bash tests/g7-trend/run.sh
       - name: Resolve Swift packages
         run: xcodebuild -resolvePackageDependencies -project xdrip.xcodeproj -scheme xdrip
       - name: Compile xDrip without signing

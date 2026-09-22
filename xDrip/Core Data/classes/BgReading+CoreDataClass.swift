@@ -28,6 +28,7 @@ public class BgReading: NSManagedObject {
         rc = 0 
         adjustedValue = nil
         smoothedValue = nil
+        sensorTrendOrdinal = nil
         hideSlope = false
         id = UniqueId.createEventId()
     }
@@ -68,6 +69,9 @@ public class BgReading: NSManagedObject {
     
     /// returns a string with an arrow representation of the slope
     func slopeArrow() -> String {
+        if let sensorTrendOrdinal {
+            return hideSlope ? "" : G7SensorTrend.arrow(ordinal: sensorTrendOrdinal.intValue)
+        }
         let slope_by_minute = calculatedValueSlope * 60000
         if (slope_by_minute <= (-3.5)) {
             return "\u{2193}\u{2193}" // ↓↓
@@ -87,6 +91,7 @@ public class BgReading: NSManagedObject {
     }
     
     func slopeOrdinal() -> Int {
+        if let sensorTrendOrdinal { return hideSlope ? 0 : sensorTrendOrdinal.intValue }
         let slope_by_minute = calculatedValueSlope * 60000
         var ordinal = 0
         if(!hideSlope) {
@@ -282,6 +287,9 @@ public class BgReading: NSManagedObject {
     
     /// slopeName for upload to Nightscout
     public var slopeName:String {
+        if let sensorTrendOrdinal {
+            return hideSlope ? "NOT COMPUTABLE" : G7SensorTrend.name(ordinal: sensorTrendOrdinal.intValue)
+        }
         let slope_by_minute:Double = calculatedValueSlope * 60000
         var arrow = "NONE"
         if (slope_by_minute <= (-3.5)) {
@@ -320,6 +328,7 @@ public struct BgReadingSnapshot: Sendable, Hashable {
     public let backfilledAt: Date?
     public let calculatedValueSlope: Double
     public let hideSlope: Bool
+    public let sensorTrendOrdinal: Int?
     public let id: String
     public let deviceName: String?
     public let calibrationSnapshot: CalibrationSnapshot?
@@ -327,6 +336,9 @@ public struct BgReadingSnapshot: Sendable, Hashable {
     public let objectID: NSManagedObjectID
 
     public func slopeArrow() -> String {
+        if let sensorTrendOrdinal {
+            return hideSlope ? "" : G7SensorTrend.arrow(ordinal: sensorTrendOrdinal)
+        }
         let slopeByMinute = calculatedValueSlope * 60000
         
         if slopeByMinute <= (-3.5) {
@@ -347,6 +359,7 @@ public struct BgReadingSnapshot: Sendable, Hashable {
     }
 
     public func slopeOrdinal() -> Int {
+        if let sensorTrendOrdinal { return hideSlope ? 0 : sensorTrendOrdinal }
         var ordinal = 0
         let slopeByMinute = calculatedValueSlope * 60000
 

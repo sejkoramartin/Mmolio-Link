@@ -224,6 +224,7 @@ struct BackupBgReading: Codable, Sendable {
     let rawData: Double
     let rb: Double
     let rc: Double
+    let sensorTrendOrdinal: Int?
     let smoothedValue: Double?
 }
 

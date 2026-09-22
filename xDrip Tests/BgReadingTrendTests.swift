@@ -68,6 +68,36 @@ final class BgReadingTrendTests: XCTestCase {
         XCTAssertTrue(hideSlope)
     }
 
+    func testSensorTrendOverridesCalculatedSlopeForDisplayAndGarmin() {
+        let current = reading(value: 101, secondsAgo: 0)
+        current.calculatedValueSlope = 0.8 / 60_000 // calculated trend would be flat
+        current.sensorTrendOrdinal = NSNumber(value: 7) // G7 reports rapid fall
+        current.hideSlope = false
+
+        XCTAssertEqual(current.slopeOrdinal(), 7)
+        XCTAssertEqual(current.slopeArrow(), "↓↓")
+        XCTAssertEqual(current.slopeName, "DoubleDown")
+        XCTAssertEqual(G7SensorTrend.arrow(ordinal: current.slopeOrdinal()), "↓↓")
+    }
+
+    func testMissingG7TrendNeverLooksFlat() {
+        let current = reading(value: 101, secondsAgo: 0)
+        current.sensorTrendOrdinal = NSNumber(value: 0)
+        current.hideSlope = true
+
+        XCTAssertEqual(current.slopeOrdinal(), 0)
+        XCTAssertEqual(current.slopeArrow(), "")
+        XCTAssertEqual(current.slopeName, "NOT COMPUTABLE")
+    }
+
+    func testV31ToV32LightweightMappingCanBeInferred() throws {
+        let directory = try XCTUnwrap(Bundle.main.url(forResource: ConstantsCoreData.modelName, withExtension: "momd"))
+        let v31 = try XCTUnwrap(NSManagedObjectModel(contentsOf: directory.appendingPathComponent("xdrip v31.mom")))
+        let v32 = try XCTUnwrap(NSManagedObjectModel(contentsOf: directory.appendingPathComponent("xdrip v32.mom")))
+        XCTAssertNoThrow(try NSMappingModel.inferredMappingModel(forSourceModel: v31, destinationModel: v32))
+        XCTAssertNotNil(v32.entitiesByName["BgReading"]?.attributesByName["sensorTrendOrdinal"])
+    }
+
     private func reading(value: Double, secondsAgo: TimeInterval) -> BgReading {
         let bgReading = BgReading(timeStamp: now.addingTimeInterval(-secondsAgo), sensor: nil, calibration: nil, rawData: value, deviceName: nil, nsManagedObjectContext: coreDataManager.mainManagedObjectContext)
         bgReading.calculatedValue = value

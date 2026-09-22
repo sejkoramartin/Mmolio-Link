@@ -453,6 +453,7 @@ final class BackupService: @unchecked Sendable {
                 rawData: $0.rawData,
                 rb: $0.rb,
                 rc: $0.rc,
+                sensorTrendOrdinal: $0.sensorTrendOrdinal?.intValue,
                 smoothedValue: $0.smoothedValue?.doubleValue
             )
         }
@@ -644,6 +645,7 @@ final class BackupService: @unchecked Sendable {
             reading.ra = record.ra
             reading.rb = record.rb
             reading.rc = record.rc
+            reading.sensorTrendOrdinal = record.sensorTrendOrdinal.map(NSNumber.init(value:))
             reading.smoothedValue = record.smoothedValue.map(NSNumber.init(value:))
             ids.insert(record.id)
             added += 1

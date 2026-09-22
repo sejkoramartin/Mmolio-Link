@@ -2,6 +2,38 @@ import XCTest
 @testable import xdrip
 
 final class DexcomG7CalibrationTests: XCTestCase {
+    func testBothG7PacketModesReadTheSensorTrend() throws {
+        var direct = Data(repeating: 0, count: 19)
+        direct[0] = 0x4E
+        direct[12] = 120
+        direct[15] = UInt8(bitPattern: -32) // -3.2 mg/dL/min
+        XCTAssertEqual(G7GlucoseMessage(data: direct)?.sensorTrendOrdinal, 7)
+
+        var coexistence = Data(repeating: 0, count: 16)
+        coexistence[0] = 0x31
+        coexistence[10] = 120
+        coexistence[13] = UInt8(bitPattern: -32)
+        XCTAssertEqual(G7CoexistenceGlucoseMessage(data: coexistence)?.sensorTrendOrdinal, 7)
+
+        direct[15] = 0x7F
+        coexistence[13] = 0x7F
+        XCTAssertEqual(G7GlucoseMessage(data: direct)?.sensorTrendOrdinal, 0)
+        XCTAssertEqual(G7CoexistenceGlucoseMessage(data: coexistence)?.sensorTrendOrdinal, 0)
+    }
+
+    func testSensorTrendCategoriesFollowDexcomRateBands() {
+        XCTAssertEqual(G7SensorTrend.ordinal(rawByte: 0), 4)
+        XCTAssertEqual(G7SensorTrend.ordinal(rawByte: 9), 4)
+        XCTAssertEqual(G7SensorTrend.ordinal(rawByte: 10), 3)
+        XCTAssertEqual(G7SensorTrend.ordinal(rawByte: 20), 2)
+        XCTAssertEqual(G7SensorTrend.ordinal(rawByte: 30), 2)
+        XCTAssertEqual(G7SensorTrend.ordinal(rawByte: 31), 1)
+        XCTAssertEqual(G7SensorTrend.ordinal(rawByte: UInt8(bitPattern: -10)), 5)
+        XCTAssertEqual(G7SensorTrend.ordinal(rawByte: UInt8(bitPattern: -20)), 6)
+        XCTAssertEqual(G7SensorTrend.ordinal(rawByte: UInt8(bitPattern: -31)), 7)
+        XCTAssertEqual(G7SensorTrend.ordinal(rawByte: 0x7F), 0)
+    }
+
     func testCalibrationCommandUsesG6WireFormatWithExplicitTransmitterTime() {
         let command = DexcomG7CalibrationCommand(glucose: 153, transmitterTime: 0x0008_840E)
 

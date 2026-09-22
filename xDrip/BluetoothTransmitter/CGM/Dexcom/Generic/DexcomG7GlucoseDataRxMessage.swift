@@ -8,6 +8,46 @@
 
 import Foundation
 
+/// Dexcom's signed trend byte is in tenths of mg/dL per minute. Keep an absent
+/// sensor trend distinct from a flat one; the displayed arrow must disappear.
+enum G7SensorTrend {
+    static func ordinal(rawByte: UInt8) -> Int {
+        if rawByte == 0x7F { return 0 }
+        let rate = Double(Int8(bitPattern: rawByte)) / 10
+        let magnitude = abs(rate)
+        if magnitude < 1 { return 4 }
+        if magnitude < 2 { return rate > 0 ? 3 : 5 }
+        if magnitude <= 3 { return rate > 0 ? 2 : 6 }
+        return rate > 0 ? 1 : 7
+    }
+
+    static func arrow(ordinal: Int) -> String {
+        switch ordinal {
+        case 1: return "↑↑"
+        case 2: return "↑"
+        case 3: return "↗"
+        case 4: return "→"
+        case 5: return "↘"
+        case 6: return "↓"
+        case 7: return "↓↓"
+        default: return ""
+        }
+    }
+
+    static func name(ordinal: Int) -> String {
+        switch ordinal {
+        case 1: return "DoubleUp"
+        case 2: return "SingleUp"
+        case 3: return "FortyFiveUp"
+        case 4: return "Flat"
+        case 5: return "FortyFiveDown"
+        case 6: return "SingleDown"
+        case 7: return "DoubleDown"
+        default: return "NOT COMPUTABLE"
+        }
+    }
+}
+
 /// Decodes the 19-byte `0x4E` response requested directly by primary mode.
 ///
 /// This packet normally contains the current reading, but its second byte is an independent
@@ -44,8 +84,8 @@ public struct G7GlucoseMessage {
     /// Packet sequence number retained for protocol completeness.
     private let sequence: UInt16
 
-    /// Signed Dexcom trend value in mg/dL per minute, or nil when the sentinel is present.
-    private let trend: Double?
+    /// Dexcom trend category; zero means the sensor supplied no usable trend.
+    let sensorTrendOrdinal: Int
 
     /// Dexcom display-only flag decoded from the final calibration and flags byte.
     private let glucoseIsDisplayOnly: Bool
@@ -120,12 +160,7 @@ public struct G7GlucoseMessage {
             algorithmStatus = DexcomAlgorithmState.None
         }
 
-        // Trend is a signed value in tenths. `0x7F` means that no trend is currently available.
-        if data[15] == 0x7F {
-            trend = nil
-        } else {
-            trend = Double(Int8(bitPattern: data[15])) / 10
-        }
+        sensorTrendOrdinal = G7SensorTrend.ordinal(rawByte: data[15])
     }
 }
 
@@ -138,6 +173,9 @@ public struct G7GlucoseMessage {
 struct G7CoexistenceGlucoseMessage {
     /// Glucose value after removing the upper Dexcom flag bits.
     let calculatedValue: Double
+
+    /// Byte 13 carries the same signed trend as the direct 0x4E response.
+    let sensorTrendOrdinal: Int
 
     /// Sensor algorithm state observed from the other app's authenticated data stream.
     let algorithmStatus: DexcomAlgorithmState
@@ -152,6 +190,7 @@ struct G7CoexistenceGlucoseMessage {
         // age. Preserve its relative transmitter time and let the caller join it with 0x25.
         calculatedValue = Double(data[10 ..< 12].to(UInt16.self) & 0x0FFF)
         algorithmStatus = DexcomAlgorithmState(rawValue: data[12]) ?? .None
+        sensorTrendOrdinal = G7SensorTrend.ordinal(rawByte: data[13])
         transmitterTime = data[6 ..< 10].to(UInt32.self)
     }
 }

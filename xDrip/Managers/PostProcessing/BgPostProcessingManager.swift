@@ -919,7 +919,7 @@ class BgPostProcessingManager {
             // choose the nearest older visible reading which gives a real trend interval
             let (calculatedValueSlope, hideSlope) = bgReading.calculateSlope(lastBgReadings: previousVisibleBgReadings)
             bgReading.calculatedValueSlope = calculatedValueSlope
-            bgReading.hideSlope = hideSlope
+            bgReading.hideSlope = bgReading.sensorTrendOrdinal.map { $0.intValue == 0 } ?? hideSlope
 
             previousVisibleBgReadings.append(bgReading)
         }

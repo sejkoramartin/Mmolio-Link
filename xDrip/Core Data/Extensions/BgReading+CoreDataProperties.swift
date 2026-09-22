@@ -24,6 +24,7 @@ extension BgReading {
     @NSManaged public var rawData: Double
     @NSManaged public var rb: Double
     @NSManaged public var rc: Double
+    @NSManaged public var sensorTrendOrdinal: NSNumber?
     @NSManaged public var smoothedValue: NSNumber?
     @NSManaged public var timeStamp: Date
     @NSManaged public var deviceName: String?
