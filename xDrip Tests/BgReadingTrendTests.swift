@@ -91,12 +91,14 @@ final class BgReadingTrendTests: XCTestCase {
         XCTAssertEqual(current.slopeName, "NOT COMPUTABLE")
     }
 
-    func testV31ToV32LightweightMappingCanBeInferred() throws {
+    func testBothV32VariantsCanMigrateToV33() throws {
         let directory = try XCTUnwrap(Bundle.main.url(forResource: ConstantsCoreData.modelName, withExtension: "momd"))
-        let v31 = try XCTUnwrap(NSManagedObjectModel(contentsOf: directory.appendingPathComponent("xdrip v31.mom")))
-        let v32 = try XCTUnwrap(NSManagedObjectModel(contentsOf: directory.appendingPathComponent("xdrip v32.mom")))
-        XCTAssertNoThrow(try NSMappingModel.inferredMappingModel(forSourceModel: v31, destinationModel: v32))
-        XCTAssertNotNil(v32.entitiesByName["BgReading"]?.attributesByName["sensorTrendOrdinal"])
+        let v33 = try XCTUnwrap(NSManagedObjectModel(contentsOf: directory.appendingPathComponent("xdrip v33.mom")))
+        for sourceName in ["xdrip v31", "xdrip v32", "xdrip v32-garmin"] {
+            let source = try XCTUnwrap(NSManagedObjectModel(contentsOf: directory.appendingPathComponent("\(sourceName).mom")))
+            XCTAssertNoThrow(try NSMappingModel.inferredMappingModel(forSourceModel: source, destinationModel: v33))
+        }
+        XCTAssertNotNil(v33.entitiesByName["BgReading"]?.attributesByName["sensorTrendOrdinal"])
     }
 
     private func reading(value: Double, secondsAgo: TimeInterval) -> BgReading {

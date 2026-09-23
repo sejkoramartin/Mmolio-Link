@@ -50,6 +50,7 @@
         <attribute name="rawData" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="rb" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="rc" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="sensorTrendOrdinal" optional="YES" attributeType="Integer 16" usesScalarValueType="YES"/>
         <attribute name="smoothedValue" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
         <attribute name="timeStamp" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="calibration" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Calibration" inverseName="bgreadings" inverseEntity="Calibration"/>

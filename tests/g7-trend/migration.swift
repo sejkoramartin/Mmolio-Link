@@ -4,14 +4,15 @@ import Foundation
 let oldURL = URL(fileURLWithPath: CommandLine.arguments[1])
 let newURL = URL(fileURLWithPath: CommandLine.arguments[2])
 let storeURL = URL(fileURLWithPath: CommandLine.arguments[3])
+let sourceName = CommandLine.arguments[4]
 guard let oldModel = NSManagedObjectModel(contentsOf: oldURL),
       let newModel = NSManagedObjectModel(contentsOf: newURL),
       let oldReading = oldModel.entitiesByName["BgReading"],
       let newReading = newModel.entitiesByName["BgReading"],
-      oldReading.attributesByName["sensorTrendOrdinal"] == nil,
       newReading.attributesByName["sensorTrendOrdinal"]?.isOptional == true else {
     fatalError("G7 trend model versions are not compatible")
 }
+let oldTrend = oldReading.attributesByName["sensorTrendOrdinal"] == nil ? nil : NSNumber(value: 3)
 
 _ = try NSMappingModel.inferredMappingModel(forSourceModel: oldModel, destinationModel: newModel)
 
@@ -32,6 +33,9 @@ reading.setValue(120.0, forKey: "rawData")
 reading.setValue(false, forKey: "calibrationFlag")
 reading.setValue(false, forKey: "hideSlope")
 reading.setValue(false, forKey: "isSuppressedByFiveMinuteCadence")
+if let oldTrend {
+    reading.setValue(oldTrend, forKey: "sensorTrendOrdinal")
+}
 try context.save()
 try oldCoordinator.remove(oldStore)
 
@@ -47,7 +51,7 @@ let request = NSFetchRequest<NSManagedObject>(entityName: "BgReading")
 guard let migrated = try migratedContext.fetch(request).first,
       migrated.value(forKey: "id") as? String == "old-reading",
       migrated.value(forKey: "calculatedValue") as? Double == 120,
-      migrated.value(forKey: "sensorTrendOrdinal") == nil else {
+      migrated.value(forKey: "sensorTrendOrdinal") as? NSNumber == oldTrend else {
     fatalError("previous glucose reading did not survive migration")
 }
-print("G7 Core Data v31 → v32 migration: passed")
+print("G7 Core Data \(sourceName) → v33 migration: passed")

@@ -50,6 +50,7 @@
         <attribute name="rawData" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="rb" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="rc" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="sensorTrendOrdinal" optional="YES" attributeType="Integer 16" usesScalarValueType="YES"/>
         <attribute name="smoothedValue" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
         <attribute name="timeStamp" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="calibration" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Calibration" inverseName="bgreadings" inverseEntity="Calibration"/>
@@ -85,7 +86,6 @@
         <attribute name="id" attributeType="String"/>
         <attribute name="measurementKindRaw" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="observedAt" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="peripheralAddress" optional="YES" attributeType="String"/>
         <attribute name="percentage" optional="YES" attributeType="Integer 16"/>
         <attribute name="producerKindRaw" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="resistanceRaw" optional="YES" attributeType="Integer 32"/>
@@ -94,7 +94,7 @@
         <attribute name="utcHourBucketStart" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="voltageARaw" optional="YES" attributeType="Integer 32"/>
         <attribute name="voltageBRaw" optional="YES" attributeType="Integer 32"/>
-        <relationship name="blePeripheral" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BLEPeripheral" inverseName="batteryHistorySamples" inverseEntity="BLEPeripheral"/>
+        <relationship name="blePeripheral" maxCount="1" deletionRule="Nullify" destinationEntity="BLEPeripheral" inverseName="batteryHistorySamples" inverseEntity="BLEPeripheral"/>
     </entity>
     <entity name="Bubble" representedClassName=".Bubble" syncable="YES">
         <attribute name="firmware" optional="YES" attributeType="String"/>
