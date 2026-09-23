@@ -14,7 +14,7 @@ The existing Garmin integration sends glucose, trend, and reading time to Mmolio
 
 ## Build and releases
 
-The `main` branch is checked by GitHub Actions with an unsigned iOS build and the Garmin/G7 compatibility tests. The TestFlight workflow is manual and needs the same six signing secrets used by the existing xDrip4iOS fork: `TEAMID`, `GH_PAT`, `FASTLANE_KEY_ID`, `FASTLANE_ISSUER_ID`, `FASTLANE_KEY`, and `MATCH_PASSWORD`. Secrets are scoped to repositories and are not copied automatically.
+The `main` branch is checked by GitHub Actions with an unsigned iOS build and the Garmin/G7 compatibility tests. TestFlight releases run manually in the existing [xdripswift repository](https://github.com/sejkoramartin/xdripswift/actions/workflows/mmolio-link-testflight.yml), which already holds the signing credentials. Enter the full 40-character Mmolio Link commit SHA. Leave **Upload signed build to TestFlight** off to verify signing first; turn it on only when ready to publish that exact commit. The workflow builds an unsigned archive without signing credentials, then signs it in a separate job using trusted release tools. No signing secrets need to be copied into this public repository.
 
 The current project still includes upstream internal code for Treatments, Statistics, and other services. Keeping those internals during the first UI migration protects sensor communication, history, data persistence, follower mode, and upgrades. Code can be removed later only after its dependencies have been traced and migration tested.
 
