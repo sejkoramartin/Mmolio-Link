@@ -1,0 +1,14 @@
+"high" = "vysoká";
+"low" = "nízká";
+"currentglucose" = "Aktuální glykemie je";
+"trendnoncomputable" = "nelze určit";
+"trenddoubledown" = "prudce klesá";
+"trendsingledown" = "rychle klesá";
+"trendfortyfivedown" = "klesá";
+"trendflat" = "beze změny";
+"trendfortyfiveup" = "stoupá";
+"trendsingleup" = "rychle stoupá";
+"trenddoubleup" = "prudce stoupá";
+"currenttrend" = "Trend:";
+"deltanoncomputable" = "nelze určit";
+"currentdelta" = "Změna oproti předchozí hodnotě je";

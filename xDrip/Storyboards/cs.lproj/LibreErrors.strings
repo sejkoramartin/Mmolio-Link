@@ -1,0 +1,4 @@
+"receivedDataIsNil" = "Z webového serveru oop nebyla přijata žádná data";
+"oOPWebServerError" = "Chyba webového serveru OOP:";
+"libreUSNotSupported" = "Libre US není podporováno";
+"libreSensorNotReady" = "Libre senzor není ve stavu připraveno";

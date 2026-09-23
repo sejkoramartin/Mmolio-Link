@@ -1,0 +1,171 @@
+"address" = "Adresa";
+"status" = "Stav";
+"connected" = "Připojeno";
+"notConnected" = "Nepřipojeno";
+"donotconnect" = "Zastavit skenování";
+"selectAliasText" = "Zvolte název zařízení Bluetooth. Bude zobrazen v aplikaci a pomůže vám zařízení rozpoznat.";
+"aliasAlreadyExists" = "Zařízení bluetooth s tímto aliasem již existuje";
+"confirmDeletionPeripheral" = "Chcete smazat zařízení bluetooth:";
+"bluetoothPeripheralAlias" = "Přezdívka";
+"SensorSerialNumber" = "Sériové číslo senzoru";
+"sensorType" = "Typ senzoru";
+"serialNumber" = "sériové číslo";
+"battery" = "Baterie";
+"versionCode" = "Kód verze";
+"voltageA" = "Napětí A";
+"voltageB" = "Napětí B";
+"waitingForData" = "Čekání na data...";
+"needsTransmitterId" = "Chybí ID vysílače";
+"scan" = "Skenovat";
+"medtrumNanoPumpScanNoticeTitle" = "Připojení pumpy Medtrum Nano";
+"medtrumNanoPumpScanNoticeMessage" = "Tato volba se připojuje k pumpě Medtrum Nano, nikoli přímo k vysílači Nano CGM.\n\nPřed vyhledáváním zkontrolujte, že aplikace EasyPatch běží, je připojena k pumpě a přijímá aktuální hodnoty CGM.\n\nAplikace EasyPatch musí zůstat spuštěná a nepřetržitě přijímat hodnoty.";
+"libre2ScanNoticeTitle" = "Bluetooth připojení aplikace Libre";
+"libre2ScanNoticeMessage" = "Před vyhledáváním vypněte aplikaci Libre oprávnění k Bluetooth v nastavení iPhonu.\n\nOprávnění Bluetooth pro aplikaci Libre musí zůstat vypnuté. Jinak může aplikace Libre převzít připojení k senzoru a Mmolio Link přestane přijímat hodnoty.";
+"dexcomG6ScanNoticeTitle" = "Připojení aplikace Dexcom";
+"dexcomG6ScanNoticeMessage" = "Před skenováním násilně zavřete aplikaci Dexcom nebo pro ni deaktivujte oprávnění Bluetooth.\n\nAplikace Dexcom nesmí být připojena k vysílači, když tato aplikace skenuje nebo přijímá hodnoty.";
+"dexcomG7ScanNoticeTitle" = "Je potřeba aplikace Dexcom G7";
+"dexcomG7ScanNoticeMessage" = "Před skenováním se ujistěte, že aplikace Dexcom G7 běží na pozadí, je připojena k senzoru a přijímá aktuální hodnoty glykémie.\n\nAplikace Dexcom G7 musí zůstat spuštěná a neustále přijímat hodnoty.";
+"readyToScan" = "Připraveno ke skenování";
+"scanning" = "Skenování";
+"disconnect" = "Odpojit";
+"tryingToConnect" = "Skenování";
+"notTryingToConnect" = "Neprobíhá skenování";
+"connect" = "Připojte se";
+"connectedAt" = "Připojeno v";
+"disConnectedAt" = "Odpojeno v";
+"resetRequired" = "Resetujte vysílač";
+"lastReset" = "Poslední reset";
+"lastResetNotKnown" = "Časové razítko posledního resetu není známo";
+"transmitterResultResult" = "Výsledek resetování vysílače";
+"bootLoader" = "Zavaděč";
+"cannotActiveCGMInFollowerMode" = "V režimu sledování nelze aktivovat CGM ani se k němu připojit.";
+"confirmDisconnectTitle" = "Potvrďte Odpojit";
+"confirmDisconnectMessage" = "Kliknutím na „Odpojit“ potvrďte, že se skutečně chcete odpojit od vysílače.";
+"transmittterStartDate" = "Vysílač spuštěn";
+"sensorStartDate" = "Senzor spuštěn";
+"useOtherDexcomAppCoexistenceFooter" = "Je vybrán režim koexistence. Další aplikace, jako je Dexcom nebo CamAPS, musí běžet na pozadí.";
+"useOtherDexcomAppPrimaryFooter" = "Je vybrán primární režim. Tato aplikace se připojuje jako hlavní aplikace a řídí připojení.";
+"dexcomG7PairingCodeMessage" = "Zadejte čtyřmístný kód párování senzoru z aktuálního aplikátoru. Primární režim se bez tohoto kódu nemůže ověřit.";
+"dexcomG7BluetoothSlot" = "Bluetooth kanál";
+"dexcomG7MobileAppSlot" = "Slot 2: Mobilní aplikace (výchozí)";
+"dexcomG7MobileAppSlotShort" = "Mobilní aplikace";
+"dexcomG7MedicalDeviceSlot" = "Slot 1: Přijímač nebo čerpadlo";
+"dexcomG7MedicalDeviceSlotShort" = "Pumpa";
+"dexcomG7SmartWatchSlot" = "Slot 3: Chytré hodinky";
+"dexcomG7SmartWatchSlotShort" = "Chytré hodinky";
+"dexcomG7MobileAppSlotFooter" = "Kanál mobilní aplikace (slot 2) je výchozí a je aktuálně ověřeným nativním připojením G7.";
+"dexcomG7MedicalDeviceSlotFooter" = "Kanál přijímače nebo pumpy používá ověřovací slot 1.";
+"dexcomG7SmartWatchSlotFooter" = "Kanál Smart Watch používá tovární autentizační slot 3.";
+"runningInCoexistenceMode" = "Běží v režimu koexistence";
+"runningInPrimaryMode" = "Běží v primárním režimu";
+"nfcScanNeeded" = "Je potřeba skenování NFC";
+"nfcScanFailedTitle" = "⚠️ Skenování senzoru se nezdařilo";
+"nfcScanFailedMessage" = "Skenujte prosím znovu";
+"nfcScanFailedScanAgainButton" = "Skenovat znovu";
+"nfcScanSuccessfulTitle" = "✅ Snímání senzoru bylo úspěšné!";
+"nfcScanSuccessfulMessage" = "Klikněte na OK a počkejte, až se senzor Libre dokončí připojení přes bluetooth.\n\nZa chvíli by se měl stav změnit na „Připojeno“.";
+"nfcErrorMessageScanErrorRetrying" = "Chyba skenování senzoru\n\nOpakuji... #";
+"nfcErrorMessageScanFailed" = "Skenování senzoru se nezdařilo";
+"nonFixedSlopeWarning" = "Vícebodová kalibrace je pokročilá funkce.\n\nPNepoužívejte prosím tuto funkci, dokud si nepřečtete sekci kalibrace v online nápovědě a nepochopíte, jak funguje.";
+"warmingUpUntil" = "Zahřívání až";
+
+"nativeAlgorithm" = "Nativní algoritmus";
+"xDripAlgorithm" = "Algoritmus xDrip";
+"confirmAlgorithmChangeToTransmitterMessage" = "Potvrďte prosím, že chcete přejít zpět na nativní algoritmus/algoritmus vysílače";
+"confirmAlgorithmChangeToxDripMessage" = "Potvrďte prosím, že chcete změnit algoritmus xDrip.\n\nToto zastaví na krátkou dobu měření a požádá vás o počáteční kalibrační hodnotu, až budete připraveni.";
+"confirmCalibrationChangeToSinglePointMessage" = "Potvrďte prosím, že chcete změnit typ kalibrace na standardní kalibraci\n\nTímto se na krátkou dobu zastaví načítání a jakmile budete připraveni, budete požádáni o počáteční kalibrační hodnotu.";
+"confirmCalibrationChangeToMultiPointMessage" = "Potvrďte prosím, že chcete změnit typ kalibrace na vícebodový\n\n⚠️ Vezměte prosím na vědomí, že tato metoda je určena pouze pro pokročilé uživatele a pokud není správně zkalibrována, může potenciálně poskytovat nebezpečné výsledky.\n\nPokud si nejste jisti, jak tuto metodu použít, stiskněte tlačítko Zrušit.";
+"confirm" = "Potvrďte";
+
+/// Bluetooth peripheral Read Success screen. Section title for the hourly timeline
+"readSuccessLast24Hours" = "Posledních 24 hodin";
+/// Bluetooth peripheral Read Success screen. Summary of received readings out of expected readings
+"readSuccessReadingsReceived" = "Přijato %d ze %d";
+/// Bluetooth peripheral Read Success screen. Footer explaining how expected readings are calculated
+"readSuccessCadenceFooter" = "Očekávané hodnoty jsou založeny na pozorované kadenci vysílače pro %@.";
+/// Bluetooth peripheral Read Success screen. Timeline legend label for good read success
+"readSuccessLegendGood" = "Dobře";
+/// Bluetooth peripheral Read Success screen. Timeline legend label for reduced read success
+"readSuccessLegendLow" = "Nízká";
+/// Bluetooth peripheral Read Success screen. Timeline legend label for poor read success
+"readSuccessLegendPoor" = "Chudák";
+/// Bluetooth peripheral Read Success screen. Timeline legend label when no readings are expected or available
+"readSuccessLegendNoData" = "Žádná data";
+/// Bluetooth peripheral Read Success screen. Accessibility label for timeline hours with no expected readings
+"readSuccessNoReadingsExpected" = "Neočekávají se žádné údaje";
+/// Bluetooth peripheral Read Success screen. Accessibility label for an hourly timeline bucket
+"readSuccessTimelineAccessibility" = "%0.1f procenta, %d z %d měření";
+
+/// Bluetooth peripheral screen. Row title and screen title for read success information
+"readSuccess" = "Přečtěte si Úspěch";
+/// Bluetooth peripheral Read Success screen. Timeline axis label for the current time
+"readSuccessNow" = "Teď";
+"scanningForTransmitter" = "Skenování...";
+"connecting" = "Připojování";
+"connectingToTransmitter" = "Připojování...";
+"reconnecting" = "Opětovné připojení";
+"reconnectingToTransmitter" = "Opětovné připojení...";
+"waiting" = "čekání...";
+
+/* Dexcom G6 Bluetooth authentication slot */
+"dexcomG6BluetoothSlot" = "Bluetooth kanál";
+"dexcomG6MobileAppSlot" = "Slot 2: Mobilní aplikace (výchozí)";
+"dexcomG6MobileAppSlotShort" = "Mobilní aplikace";
+"dexcomG6MedicalDeviceSlot" = "Slot 1: Přijímač nebo čerpadlo";
+"dexcomG6MedicalDeviceSlotShort" = "Pumpa";
+"dexcomG6MobileAppSlotFooter" = "Kanál mobilní aplikace je výchozím nastavením pro telefonní připojení.";
+"dexcomG6MedicalDeviceSlotFooter" = "Kanál přijímače nebo pumpy je normálně vyhrazen pro přijímač Dexcom nebo kompatibilní pumpu. Při jeho použití pro tuto aplikaci zůstane kanál Mobile App dostupný pro telefon nebo jiné zařízení.";
+"dexcomG6BluetoothSlotUnavailableInCoexistenceMode" = "Nedostupné v režimu koexistence";
+"dexcomG6MedicalDeviceSlotWarning" = "Kanál přijímače nebo pumpy je normálně vyhrazen pro přijímač Dexcom nebo kompatibilní pumpu. Jeho výběr může zabránit připojení zařízení.\n\nPoužití kanálu přijímače nebo pumpy by mělo být zvažováno pouze pro experimentální použití. Výběr se projeví při příštím ověření.";
+"dexcomG6AnubisSlot" = "Slot 3: Anubis Extra";
+"dexcomG6AnubisSlotShort" = "Slot 3";
+"dexcomG6AnubisSlotFooter" = "Slot 3 je k dispozici pouze na vysílačích Anubis. Je experimentální a ponechává kanály Mobile App a Receiver nebo Pump dostupné pro jiná zařízení.";
+"dexcomG6AnubisSlotWarning" = "Slot 3 je experimentální kanál dostupný pouze na vysílačích Anubis.\n\nPoužívejte slot 3 pouze pro testování. Výběr se projeví při příštím ověření.";
+"dexcomConnectionMode" = "Režim připojení";
+"dexcomPrimaryMode" = "Primární";
+"dexcomCoexistenceMode" = "Soužití";
+"dexcomPrimaryModePickerOption" = "Primární režim";
+"dexcomCoexistenceModePickerOption" = "Režim koexistence";
+"dexcomG6ModeSelectionFooter" = "Režim připojení G6 můžete později změnit v nastavení vysílače.";
+"dexcomConnectionModeSelectionExplanation" = "Primární režim připojuje tuto aplikaci přímo a vyžaduje, aby byla zavřena jakákoli jiná aplikace, která se připojuje k zařízení Dexcom. \n\nRežim koexistence závisí na jiné aplikaci, která udržuje připojení Dexcom a přijímá naměřené hodnoty.";
+"dexcomBluetoothChannelSelectionExplanation" = "Vyberte kanál Bluetooth, který bude tato aplikace používat. Pokud nepotřebujete ponechat tento kanál dostupný pro jiné připojení, vyberte možnost Mobilní aplikace.";
+"dexcomG6CoexistenceModeSelectionMessage" = "Byl vybrán režim koexistence. Další aplikace, jako je Dexcom G6 nebo CamAPS, se musí připojit k vysílači G6 a ověřit jej.\n\nNechte druhou aplikaci spuštěnou na pozadí, jinak %@ nebude přijímat údaje.";
+"dexcomG6PrimaryModeSelectionMessage" = "Byl vybrán primární režim. %@ musí být jedinou aplikací, která se připojuje a ověřuje pomocí vysílače G6.\n\nZavřete jakoukoli jinou aplikaci, která se připojuje k vysílači, nebo deaktivujte její oprávnění Bluetooth. V opačném případě nemusí %@ nebo jiná aplikace přijímat údaje.";
+"dexcomPrimaryModeAddFlowMessage" = "Připojte se přímo jako hlavní aplikace. Odpojte jakoukoli jinou aplikaci od tohoto Dexcom.";
+"dexcomCoexistenceModeAddFlowMessage" = "Sdílejte připojení s jinou aplikací. Udržujte správnou funkci aplikace Dexcom nebo CamAPS na pozadí.";
+"dexcomG7NoSensorLabelFound" = "Na fotografii nebyl nalezen žádný štítek senzoru Dexcom G7.";
+"dexcomG7InvalidSensorLabelFound" = "Data Matrix byla nalezena, ale nebyl to platný štítek senzoru Dexcom G7.";
+
+
+/* Battery history */
+"batteryHistory" = "Historie baterie";
+"batteryHistoryTransmitterID" = "ID vysílače";
+"batteryHistoryNoData" = "Žádná historie baterie";
+"batteryHistoryBeginsAfterReading" = "Historie začne po dalším skutečném měření stavu baterie.";
+"batteryHistoryRange" = "Rozsah";
+"batteryHistoryRangeAccessibility" = "Rozsah historie baterie";
+"batteryHistoryRangeExplanation" = "Rozsah se počítá od aktuálního okamžiku zpět o zvolený počet dní. Mezery označují období bez měření.";
+
+"connectionDiagramOtherApp" = "Jiná aplikace";
+
+/* Bluetooth reception measured by the phone. */
+"signalStrength" = "Síla signálu";
+
+"signalStrengthChartExplanation" = "Živý signál během posledních dvou minut. Nová měření přicházejí při připojení přibližně každou sekundu.";
+
+"signalStrengthWeak" = "slabý";
+"signalStrengthStrong" = "Silný";
+"signalStrengthLastMeasurement" = "Poslední měření";
+// Generic heartbeat subscription controls.
+"heartbeat.title" = "Předplatné";
+"heartbeat.mode" = "Režim předplatného";
+"heartbeat.mode.automatic" = "Svobodný";
+"heartbeat.mode.all" = "všechny";
+"heartbeat.footer.automatic" = "Automaticky vybere jeden podporovaný kanál Bluetooth pro aktualizace srdečního tepu, čímž omezí počet odběrů na minimum. Pokud se předplatné nezdaří, je vyzkoušen jiný kanál.";
+"heartbeat.footer.all" = "Přihlásí se k odběru všech podporovaných kanálů Bluetooth a umožňuje aktualizace z kteréhokoli z nich, aby poskytovaly tep.";
+"heartbeat.simpleFooter" = "Změny se projeví při dalším připojení.";
+
+"signalStrengthDisconnected" = "Odpojeno";
+
+/* Label before the transmitter expiry date. */
+"transmitterExpiresLabel" = "Platnost vyprší";

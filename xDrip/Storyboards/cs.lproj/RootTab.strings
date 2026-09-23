@@ -1,0 +1,6 @@
+/* Root tab titles. */
+"rootTab.home" = "Domů";
+"rootTab.treatments" = "Léčba";
+"rootTab.statistics" = "Statistiky";
+"rootTab.devices" = "Zařízení";
+"rootTab.settings" = "Nastavení";

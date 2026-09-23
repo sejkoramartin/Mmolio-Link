@@ -1,0 +1,16 @@
+"alerttypessettingsview_screentitle" = "Typy alarmů";
+"alerttypesettingsview_screentitle" = "Upravit typ alarmu";
+"alerttypesettingsview_name" = "Jméno";
+"alerttypesettingsview_enabled" = "Povoleno";
+"alerttypesettingsview_vibrate" = "Vibrovat";
+"alerttypesettingsview_snoozevianotification" = "Povolit odložení prostřednictvím oznámení";
+"alerttypesettingsview_defaultsnoozeperiod" = "Výchozí doba odložení";
+"alerttypesettingsview_overridemute" = "Přepsat ztlumení";
+"alerttypesettingsview_sound" = "Zvuk";
+"alerttypesettingsview_defaultiossound" = "Zvuk iOS";
+"alerttypesettingsview_givename" = "Název alarmu";
+"alerttypesettingsview_givesnoozeperiod" = "Odložit čas v minutách";
+"alerttypesettingsview_picksoundname" = "Název zvuku";
+"alertTypeNoSound" = "Žádný zvuk";
+"alerttypenamealreadyexistsmessages" = "Typ alarmu s tímto názvem již existuje. Použijte jiný název";
+"confirmdeletionalerttype" = "Smazat typ budíku:";

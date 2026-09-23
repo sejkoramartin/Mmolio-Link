@@ -90,25 +90,25 @@
 	<key>MainAppBundleIdentifier</key>
 	<string>$(MAIN_APP_BUNDLE_IDENTIFIER)</string>
 	<key>NFCReaderUsageDescription</key>
-	<string>xDrip4iO5 uses NFC to scan Libre sensors.</string>
+	<string>Mmolio Link používá NFC ke skenování senzorů Libre.</string>
 	<key>NSAppTransportSecurity</key>
 	<dict/>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Connect to CGM Transmitter and M5Stack</string>
+	<string>Připojení k vysílači senzoru a zařízení M5Stack.</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Connect to CGM Transmitter and M5Stack</string>
+	<string>Připojení k vysílači senzoru a zařízení M5Stack.</string>
 	<key>NSCalendarsFullAccessUsageDescription</key>
-	<string>To create events with BG reading values, so that they can be viewed on Apple Watch and CarPlay</string>
+	<string>Vytváření událostí s hodnotami glykémie pro Apple Watch a CarPlay.</string>
 	<key>NSCalendarsUsageDescription</key>
-	<string>To create events with BG reading values, so that they can be viewed on Apple Watch and CarPlay</string>
+	<string>Vytváření událostí s hodnotami glykémie pro Apple Watch a CarPlay.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>xDrip4iOS uses the camera to scan Dexcom sensor labels.</string>
+	<string>Mmolio Link používá fotoaparát ke skenování štítků senzorů Dexcom.</string>
 	<key>NSContactsUsageDescription</key>
-	<string>To update the contact photo with an image showing the current BG values</string>
+	<string>Aktualizace fotografie kontaktu obrázkem s aktuální glykémií.</string>
 	<key>NSHealthShareUsageDescription</key>
-	<string>Store bloodglucose readings</string>
+	<string>Ukládání hodnot glykémie.</string>
 	<key>NSHealthUpdateUsageDescription</key>
-	<string>Store bloodglucose readings</string>
+	<string>Ukládání hodnot glykémie.</string>
 	<key>NSSupportsLiveActivities</key>
 	<true/>
 	<key>UIBackgroundModes</key>
@@ -165,7 +165,7 @@
 				<string>public.data</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>xDrip Backup</string>
+			<string>Záloha Mmolio Link</string>
 			<key>UTTypeIdentifier</key>
 			<string>com.xdripswift.backup</string>
 			<key>UTTypeTagSpecification</key>

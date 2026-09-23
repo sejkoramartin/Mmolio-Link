@@ -18,7 +18,7 @@ struct XDripWidget: Widget {
                 .widgetBackground(backgroundView: Color.black)
         }
         .configurationDisplayName(ConstantsHomeView.applicationName)
-        .description("Show the current blood glucose level")
+        .description("Zobrazit aktuální glykemii")
         .supportedFamilies([
                 .systemSmall,
                 .systemMedium,

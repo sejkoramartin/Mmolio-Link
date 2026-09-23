@@ -1,0 +1,9 @@
+"screenTitle" = "Zařízení";
+"selectCategory" = "Vyberte Typ";
+"selectType" = "Vyberte Typ vysílače";
+"batteryLevel" = "Úroveň baterie";
+"heartbeatDeviceFooter" = "Zařízení pro srdeční tep neposkytuje hodnoty glukózy. Využívá aktivitu Bluetooth k probuzení aplikace na pozadí, takže aktualizace sledujících, alarmy, odznaky a oznámení mohou pokračovat.";
+"m5StackDeviceFooter" = "Zařízení M5Stack jsou malé externí displeje založené na ESP32. Mohou zobrazovat hodnoty glukózy odeslané z xDrip4iOS přes Bluetooth.";
+"noBluetoothPeripheralsConfigured" = "Nejsou nakonfigurována žádná zařízení Bluetooth";
+"noMultipleActiveCGMsAllowed" = "Již máte připojený jeden vysílač CGM.\n\nOvěřte své další vysílače CGM a klikněte na 'Zastavit skenování', 'Odpojit' nebo je v případě potřeby jednoduše smažte.";
+"noMultipleActiveCGMsAllowedFooter" = "Již máte připojeno jedno CGM.";

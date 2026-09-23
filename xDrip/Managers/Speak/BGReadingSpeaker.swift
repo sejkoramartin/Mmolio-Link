@@ -162,7 +162,7 @@ class BGReadingSpeaker:NSObject {
         }
         
         // say the text
-        say(text: currentBgReadingOutput, language: Texts_SpeakReading.languageCode)
+        say(text: currentBgReadingOutput, language: "cs-CZ")
         
         // set timeStampLastSpokenReading
         timeStampLastSpokenReading = bgReadingToSpeak.timeStamp
@@ -206,7 +206,7 @@ class BGReadingSpeaker:NSObject {
         let newNumber = number.replacingOccurrences(of: " ", with: "")
         
         if Double(newNumber) != nil, let languageCode = languageCode {
-            if languageCode.uppercased().startsWith("DE") {
+            if languageCode.uppercased().startsWith("DE") || languageCode.uppercased().startsWith("CS") {
                 return number.replacingOccurrences(of: ".", with: ",")
             }
         }

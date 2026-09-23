@@ -1,0 +1,8 @@
+/*
+  WatchComplication.strings
+  xdrip
+
+  Created by Paul Plant on 26/4/24.
+  Copyright © 2024 Johan Degraeve. All rights reserved.
+*/
+"keepAliveDisabled" = "Běh na pozadí je vypnutý";

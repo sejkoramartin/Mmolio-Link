@@ -29,9 +29,9 @@ extension XDripWatchComplication.EntryView {
                 .widgetCurvesContent()
                 .widgetLabel {
                     Gauge(value: entry.widgetState.bgValueInMgDl ?? entry.widgetState.gaugeModel().nilValue, in: entry.widgetState.gaugeModel().minValue...entry.widgetState.gaugeModel().maxValue) {
-                        Text("Not shown")
+                        Text("Nezobrazuje se")
                     } currentValueLabel: {
-                        Text("Not shown")
+                        Text("Nezobrazuje se")
                     } minimumValueLabel: {
                         Text(entry.widgetState.gaugeModel().minValue.mgDlToMmolAndToString(mgDl: entry.widgetState.isMgDl))
                             .font(.system(size: 8))

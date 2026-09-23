@@ -2044,6 +2044,29 @@
 		A9A000140000000000000001 /* ConnectIQTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectIQTransport.swift; sourceTree = "<group>"; };
 		A9A000150000000000000001 /* GarminManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarminManager.swift; sourceTree = "<group>"; };
 		A9A000160000000000000001 /* SettingsViewGarminSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewGarminSettingsViewModel.swift; sourceTree = "<group>"; };
+		8C9982C956D1D139D7F9BAF5 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/BgReadings.strings; sourceTree = "<group>"; };
+		EC00AF96E358E5A49A224D34 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/BluetoothPeripheralsView.strings; sourceTree = "<group>"; };
+		C847FF1CCC5B12A89DECC85A /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/LibreNFC.strings; sourceTree = "<group>"; };
+		579BE93E46273CD759823756 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/BluetoothPeripheralView.strings; sourceTree = "<group>"; };
+		E44B73C17BD40C1EB97D1D6B /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Alerts.strings; sourceTree = "<group>"; };
+		138E42DEAE354502FC02ED0B /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/WatchComplication.strings; sourceTree = "<group>"; };
+		FCD64ABCD261B503D1663840 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/WatchApp.strings; sourceTree = "<group>"; };
+		E68AA5284134119711B28685 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Treatments.strings; sourceTree = "<group>"; };
+		38C5395C6BE96194BC0711A8 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/LibreStates.strings; sourceTree = "<group>"; };
+		856C8AB0A2ACBDE2C8F8E3FF /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/M5StackView.strings; sourceTree = "<group>"; };
+		39D4485A126749F28E3540EA /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/LibreErrors.strings; sourceTree = "<group>"; };
+		B5CA454F3E19262798B0C64F /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/NightscoutTestResult.strings; sourceTree = "<group>"; };
+		682819BBE6C9BA13BB571F05 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/AlertTypesSettingsView.strings; sourceTree = "<group>"; };
+		EA62691F2568ABE114B029E7 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/SpeakReading.strings; sourceTree = "<group>"; };
+		5406DD42C884C6C1AD28963D /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/HomeView.strings; sourceTree = "<group>"; };
+		40FC0FBA7147A5934C6FD697 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/CalibrationRequest.strings; sourceTree = "<group>"; };
+		61B2C38B7CA7DF1B38CD26D5 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/RootTab.strings; sourceTree = "<group>"; };
+		BFA88F5603A9D657028E225A /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EA809739A2C4440B94BE22A3 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Common.strings; sourceTree = "<group>"; };
+		1C7E73DF2A8DEDD2A6B9B886 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/ErrorMessages.strings; sourceTree = "<group>"; };
+		B1F778D4215C529A8A6F870A /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/SettingsViews.strings; sourceTree = "<group>"; };
+		2FC6ACBFBF51D468F675465C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Snooze.strings; sourceTree = "<group>"; };
+		E57085B44567E70CA70AA3E1 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/DexcomShareTestResult.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -4044,28 +4067,11 @@
 			};
 			buildConfigurationList = F8AC425521ADEBD60078C348 /* Build configuration list for PBXProject "xdrip" */;
 			compatibilityVersion = "Xcode 9.3";
-			developmentRegion = en;
+			developmentRegion = cs;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
+				cs,
 				Base,
-				nl,
-				sl,
-				ru,
-				"pl-PL",
-				it,
-				fr,
-				zh,
-				pt,
-				de,
-				ar,
-				fi,
-				es,
-				sv,
-				tr,
-				da,
-				uk,
-				el,
 			);
 			mainGroup = F8AC425121ADEBD60078C348;
 			packageReferences = (
@@ -5018,9 +5024,7 @@
 		47046EA92A6E8F7B00A6F736 /* BgReadings.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				47046EA82A6E8F7B00A6F736 /* en */,
-				47046EAA2A6E8F8200A6F736 /* es */,
-				47DB06C02A6FB3CC00267BE3 /* nl */,
+				8C9982C956D1D139D7F9BAF5 /* cs */,
 			);
 			name = BgReadings.strings;
 			sourceTree = "<group>";
@@ -5028,24 +5032,7 @@
 		470CE1FE246802EB00D5CB74 /* BluetoothPeripheralsView.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				470CE1FF246802F400D5CB74 /* en */,
-				F86A3C6D247718C700EE7E46 /* ar */,
-				2867F5CD25BC209500AA1E98 /* fi */,
-				F81F36F725C157D900520946 /* pt */,
-				F81F39A725C5FAE500520946 /* nl */,
-				F81F39DD25C6167D00520946 /* de */,
-				F81F3A6525C9E5A800520946 /* es */,
-				CE1B2FD725D0264A00F642F5 /* fr */,
-				F81F3BC925D0923A00520946 /* it */,
-				F81F3BDA25D092CC00520946 /* pl-PL */,
-				F81F3BEB25D093B200520946 /* ru */,
-				F81F3BFC25D0945000520946 /* sl */,
-				F81F3C1025D096C000520946 /* zh */,
-				198D44C6260A3A3300A2B4A2 /* sv */,
-				4798BACD27BA7887002583BC /* tr */,
-				F8E4DCE02805F7FB007CF822 /* da */,
-				F8D094EF2846BDD50087FFEA /* uk */,
-				4166BFBD28C3501500199980 /* el */,
+				EC00AF96E358E5A49A224D34 /* cs */,
 			);
 			name = BluetoothPeripheralsView.strings;
 			sourceTree = "<group>";
@@ -5053,24 +5040,7 @@
 		4749EB9D25B36E010072DF8B /* LibreNFC.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4749EB9C25B36E010072DF8B /* en */,
-				2867F5DB25BC209C00AA1E98 /* fi */,
-				F81F370F25C1585800520946 /* pt */,
-				F81F39B325C5FB4D00520946 /* nl */,
-				F81F39CC25C6108300520946 /* ar */,
-				F81F39EB25C616C900520946 /* de */,
-				F81F3A7525C9E5A800520946 /* es */,
-				CE1B2FCF25D0264900F642F5 /* fr */,
-				F81F3BD725D0929700520946 /* it */,
-				F81F3BE825D0935000520946 /* pl-PL */,
-				F81F3BF925D0940E00520946 /* ru */,
-				F81F3C0825D0949500520946 /* sl */,
-				F81F3C0925D094CF00520946 /* zh */,
-				198D44D8260A3A3400A2B4A2 /* sv */,
-				4798BADC27BA7965002583BC /* tr */,
-				F8E4DCF02805F7FD007CF822 /* da */,
-				F8D094FE2846BDD70087FFEA /* uk */,
-				4166BFCD28C3501500199980 /* el */,
+				C847FF1CCC5B12A89DECC85A /* cs */,
 			);
 			name = LibreNFC.strings;
 			sourceTree = "<group>";
@@ -5078,24 +5048,7 @@
 		47503384247420A200D2260B /* BluetoothPeripheralView.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				47503383247420A200D2260B /* en */,
-				F86A3C6E247718C700EE7E46 /* ar */,
-				2867F5CE25BC209600AA1E98 /* fi */,
-				F81F36F825C157DF00520946 /* pt */,
-				F81F39A825C5FAEF00520946 /* nl */,
-				F81F3A6625C9E5A800520946 /* es */,
-				CE1B2FDF25D0264B00F642F5 /* fr */,
-				F81F3BC525D090D800520946 /* de */,
-				F81F3BCA25D0924300520946 /* it */,
-				F81F3BDB25D092CF00520946 /* pl-PL */,
-				F81F3BEC25D093B700520946 /* ru */,
-				F81F3BFD25D0945400520946 /* sl */,
-				F81F3C0F25D096BC00520946 /* zh */,
-				198D44C7260A3A3300A2B4A2 /* sv */,
-				4798BACE27BA7892002583BC /* tr */,
-				F8E4DCE12805F7FB007CF822 /* da */,
-				F8D094F02846BDD50087FFEA /* uk */,
-				4166BFBE28C3501500199980 /* el */,
+				579BE93E46273CD759823756 /* cs */,
 			);
 			name = BluetoothPeripheralView.strings;
 			sourceTree = "<group>";
@@ -5103,11 +5056,7 @@
 		476FA90A2BDC1EBA0091866C /* WatchComplication.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				476FA90B2BDC1EBA0091866C /* en */,
-				476FA9102BDC1FFF0091866C /* es */,
-				47EDD1552BDD8AF300C5A286 /* de */,
-				47EDD1572BDF811000C5A286 /* nl */,
-				47EDD15C2BE028A200C5A286 /* fr */,
+				138E42DEAE354502FC02ED0B /* cs */,
 			);
 			name = WatchComplication.strings;
 			sourceTree = "<group>";
@@ -5123,11 +5072,7 @@
 		47EDD1472BDD56C800C5A286 /* WatchApp.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				47EDD1482BDD56C800C5A286 /* en */,
-				47EDD14A2BDD57D600C5A286 /* es */,
-				47EDD1542BDD8ADD00C5A286 /* de */,
-				47EDD1562BDF809800C5A286 /* nl */,
-				47EDD15B2BE0286000C5A286 /* fr */,
+				FCD64ABCD261B503D1663840 /* cs */,
 			);
 			name = WatchApp.strings;
 			sourceTree = "<group>";
@@ -5135,23 +5080,7 @@
 		D4AC54412778C82B0097FF10 /* Treatments.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D4AC54422778C82B0097FF10 /* en */,
-				D4AC54432778C82B0097FF10 /* sl */,
-				D4AC54442778C82B0097FF10 /* de */,
-				D4AC54452778C82B0097FF10 /* sv */,
-				D4AC54462778C82B0097FF10 /* es */,
-				D4AC54472778C82B0097FF10 /* pt */,
-				D4AC54482778C82B0097FF10 /* pl-PL */,
-				D4AC54492778C82B0097FF10 /* ru */,
-				D4AC544A2778C82B0097FF10 /* nl */,
-				D4AC544B2778C82B0097FF10 /* fr */,
-				D4AC544C2778C82B0097FF10 /* fi */,
-				D4AC544D2778C82C0097FF10 /* zh */,
-				D4AC544E2778C82C0097FF10 /* it */,
-				D4AC544F2778C82C0097FF10 /* ar */,
-				F8E4DCDD2805F7FB007CF822 /* da */,
-				F8D094EC2846BDD50087FFEA /* uk */,
-				4166BFBA28C3501500199980 /* el */,
+				E68AA5284134119711B28685 /* cs */,
 			);
 			name = Treatments.strings;
 			sourceTree = "<group>";
@@ -5159,24 +5088,7 @@
 		F81F370A25C1584A00520946 /* LibreStates.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F81F370925C1584A00520946 /* en */,
-				F81F370D25C1584F00520946 /* pt */,
-				F81F39B125C5FB4100520946 /* nl */,
-				F81F39CA25C6107900520946 /* ar */,
-				F81F39E925C616C000520946 /* de */,
-				F81F3A7325C9E5A800520946 /* es */,
-				CE1B2FDC25D0264B00F642F5 /* fr */,
-				F81F3BC625D091EA00520946 /* fi */,
-				F81F3BD525D0928E00520946 /* it */,
-				F81F3BE625D0934200520946 /* pl-PL */,
-				F81F3BF725D0940500520946 /* ru */,
-				F81F3C0625D0948D00520946 /* sl */,
-				F81F3C0B25D0968D00520946 /* zh */,
-				198D44D6260A3A3400A2B4A2 /* sv */,
-				4798BADA27BA795A002583BC /* tr */,
-				F8E4DCEE2805F7FD007CF822 /* da */,
-				F8D094FC2846BDD70087FFEA /* uk */,
-				4166BFCB28C3501500199980 /* el */,
+				38C5395C6BE96194BC0711A8 /* cs */,
 			);
 			name = LibreStates.strings;
 			sourceTree = "<group>";
@@ -5184,24 +5096,7 @@
 		F889CB71236D84AC00A81068 /* M5StackView.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F889CB70236D84AC00A81068 /* en */,
-				F86A3C75247718C700EE7E46 /* ar */,
-				2867F5D525BC209A00AA1E98 /* fi */,
-				F81F36FF25C1581900520946 /* pt */,
-				F81F39AD25C5FB1C00520946 /* nl */,
-				F81F39E325C6169C00520946 /* de */,
-				F81F3A6D25C9E5A800520946 /* es */,
-				CE1B2FDD25D0264B00F642F5 /* fr */,
-				F81F3BD025D0926000520946 /* it */,
-				F81F3BE125D092FB00520946 /* pl-PL */,
-				F81F3BF225D093E300520946 /* ru */,
-				F81F3C0325D0947300520946 /* sl */,
-				F81F3C0E25D096A900520946 /* zh */,
-				198D44CE260A3A3400A2B4A2 /* sv */,
-				4798BADD27BA7996002583BC /* tr */,
-				F8E4DCE82805F7FC007CF822 /* da */,
-				F8D094F62846BDD60087FFEA /* uk */,
-				4166BFC528C3501500199980 /* el */,
+				856C8AB0A2ACBDE2C8F8E3FF /* cs */,
 			);
 			name = M5StackView.strings;
 			sourceTree = "<group>";
@@ -5209,23 +5104,7 @@
 		F8AC426321ADEBD60078C348 /* RootTab.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8BDD435221A0005006EAB84 /* en */,
-				F8BDD43A221A096C006EAB84 /* nl */,
-				F8B48ABF22B37BE5009BCC01 /* sl */,
-				F8B48ACB22B37C00009BCC01 /* ru */,
-				F8B48AE422B37C49009BCC01 /* pl-PL */,
-				F8B48AF022B37C5B009BCC01 /* it */,
-				F8B48AFC22B37C67009BCC01 /* fr */,
-				F8B48B0822B37C83009BCC01 /* zh */,
-				F889CB8E236D89C800A81068 /* de */,
-				F86A3C7A247718C800EE7E46 /* ar */,
-				2867F5C925BC209500AA1E98 /* fi */,
-				F81F370125C1582400520946 /* pt */,
-				F81F3A6125C9E5A800520946 /* es */,
-				198D44E7260A822000A2B4A2 /* sv */,
-				4798BAC827BA6AA8002583BC /* tr */,
-				F8E4DCDB2805F7FA007CF822 /* da */,
-				4166BFB828C3501500199980 /* el */,
+				61B2C38B7CA7DF1B38CD26D5 /* cs */,
 			);
 			name = RootTab.strings;
 			sourceTree = "<group>";
@@ -5233,24 +5112,7 @@
 		F8AF11FF24B3B62D00AE5BA2 /* LibreErrors.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8AF11FE24B3B62D00AE5BA2 /* en */,
-				2867F5D925BC209B00AA1E98 /* fi */,
-				F81F370725C1584200520946 /* pt */,
-				F81F39B025C5FB3B00520946 /* nl */,
-				F81F39C925C6107600520946 /* ar */,
-				F81F39E825C616BC00520946 /* de */,
-				F81F3A7225C9E5A800520946 /* es */,
-				CE1B2FD025D0264900F642F5 /* fr */,
-				F81F3BD425D0928A00520946 /* it */,
-				F81F3BE525D0933500520946 /* pl-PL */,
-				F81F3BF625D0940200520946 /* ru */,
-				F81F3C0525D0948A00520946 /* sl */,
-				F81F3C0C25D0969100520946 /* zh */,
-				198D44D5260A3A3400A2B4A2 /* sv */,
-				4798BAD927BA7956002583BC /* tr */,
-				F8E4DCED2805F7FD007CF822 /* da */,
-				F8D094FB2846BDD70087FFEA /* uk */,
-				4166BFCA28C3501500199980 /* el */,
+				39D4485A126749F28E3540EA /* cs */,
 			);
 			name = LibreErrors.strings;
 			sourceTree = "<group>";
@@ -5258,24 +5120,7 @@
 		F8B3A788225D4473004BA588 /* NightscoutTestResult.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8B3A787225D4473004BA588 /* en */,
-				F8B48B1122B37C84009BCC01 /* zh */,
-				F86A3C76247718C700EE7E46 /* ar */,
-				2867F5D625BC209A00AA1E98 /* fi */,
-				F81F370225C1582700520946 /* pt */,
-				F81F39AE25C5FB2900520946 /* nl */,
-				F81F39E425C616A800520946 /* de */,
-				F81F3A6E25C9E5A800520946 /* es */,
-				CE1B2FD925D0264A00F642F5 /* fr */,
-				F81F3BD125D0926F00520946 /* it */,
-				F81F3BE225D0930600520946 /* pl-PL */,
-				F81F3BF325D093EA00520946 /* ru */,
-				F81F3C0425D0947E00520946 /* sl */,
-				198D44CF260A3A3400A2B4A2 /* sv */,
-				4798BAD527BA7934002583BC /* tr */,
-				F8E4DCE92805F7FC007CF822 /* da */,
-				F8D094F72846BDD60087FFEA /* uk */,
-				4166BFC628C3501500199980 /* el */,
+				B5CA454F3E19262798B0C64F /* cs */,
 			);
 			name = NightscoutTestResult.strings;
 			sourceTree = "<group>";
@@ -5283,24 +5128,7 @@
 		F8B3A7B3226A0A71004BA588 /* Alerts.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8B3A7B6226A0B12004BA588 /* nl */,
-				F8B48B0C22B37C83009BCC01 /* zh */,
-				475DED96244AF92A00F78473 /* en */,
-				F86A3C6B247718C700EE7E46 /* ar */,
-				2867F5CB25BC209500AA1E98 /* fi */,
-				F81F36F425C1579C00520946 /* pt */,
-				F81F39DB25C6167100520946 /* de */,
-				F81F3A6325C9E5A800520946 /* es */,
-				CE1B2FC825D0261500F642F5 /* fr */,
-				F81F3BC725D0922D00520946 /* it */,
-				F81F3BD825D092C500520946 /* pl-PL */,
-				F81F3BE925D093A400520946 /* ru */,
-				F81F3BFA25D0944900520946 /* sl */,
-				198D44C4260A3A3300A2B4A2 /* sv */,
-				4798BACB27BA7688002583BC /* tr */,
-				F8E4DCDE2805F7FB007CF822 /* da */,
-				F8D094ED2846BDD50087FFEA /* uk */,
-				4166BFBB28C3501500199980 /* el */,
+				E44B73C17BD40C1EB97D1D6B /* cs */,
 			);
 			name = Alerts.strings;
 			sourceTree = "<group>";
@@ -5308,24 +5136,7 @@
 		F8B3A80B227A3E97004BA588 /* AlertTypesSettingsView.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8B3A80C227A3E97004BA588 /* en */,
-				F8B3A80E227A3EC8004BA588 /* nl */,
-				F8B48B0D22B37C84009BCC01 /* zh */,
-				F86A3C6C247718C700EE7E46 /* ar */,
-				2867F5CC25BC209500AA1E98 /* fi */,
-				F81F36F625C157D200520946 /* pt */,
-				F81F39DC25C6167600520946 /* de */,
-				F81F3A6425C9E5A800520946 /* es */,
-				CE1B2FCD25D0264900F642F5 /* fr */,
-				F81F3BC825D0923500520946 /* it */,
-				F81F3BD925D092C900520946 /* pl-PL */,
-				F81F3BEA25D093AD00520946 /* ru */,
-				F81F3BFB25D0944D00520946 /* sl */,
-				198D44C5260A3A3300A2B4A2 /* sv */,
-				4798BACC27BA7691002583BC /* tr */,
-				F8E4DCDF2805F7FB007CF822 /* da */,
-				F8D094EE2846BDD50087FFEA /* uk */,
-				4166BFBC28C3501500199980 /* el */,
+				682819BBE6C9BA13BB571F05 /* cs */,
 			);
 			name = AlertTypesSettingsView.strings;
 			sourceTree = "<group>";
@@ -5333,24 +5144,7 @@
 		F8B48A9A22B2FA66009BCC01 /* SpeakReading.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8B48A9B22B2FA66009BCC01 /* en */,
-				F8B48A9D22B2FA6F009BCC01 /* nl */,
-				F8B48AC222B37BE6009BCC01 /* sl */,
-				F8B48ACE22B37C01009BCC01 /* ru */,
-				F8B48AE722B37C49009BCC01 /* pl-PL */,
-				F8B48AF322B37C5C009BCC01 /* it */,
-				F8B48AFF22B37C67009BCC01 /* fr */,
-				F8B48B0B22B37C83009BCC01 /* zh */,
-				F81D6D4522B67F55005EFAE2 /* pt */,
-				F86A3C78247718C700EE7E46 /* ar */,
-				2867F5D825BC209B00AA1E98 /* fi */,
-				F81F39E625C616AF00520946 /* de */,
-				F81F3A7025C9E5A800520946 /* es */,
-				198D44D2260A3A3400A2B4A2 /* sv */,
-				4798BAD727BA7947002583BC /* tr */,
-				F8E4DCEB2805F7FC007CF822 /* da */,
-				F8D094F92846BDD60087FFEA /* uk */,
-				4166BFC828C3501500199980 /* el */,
+				EA62691F2568ABE114B029E7 /* cs */,
 			);
 			name = SpeakReading.strings;
 			sourceTree = "<group>";
@@ -5358,24 +5152,7 @@
 		F8B48A9E22B2FA7B009BCC01 /* HomeView.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8B48A9F22B2FA7B009BCC01 /* en */,
-				F8B48B0A22B37C83009BCC01 /* zh */,
-				F86A3C73247718C700EE7E46 /* ar */,
-				2867F5D325BC209900AA1E98 /* fi */,
-				F81F36FB25C157F800520946 /* pt */,
-				F81F39AC25C5FB1000520946 /* nl */,
-				F81F39E225C6168E00520946 /* de */,
-				F81F3A6B25C9E5A800520946 /* es */,
-				CE1B2FDB25D0264A00F642F5 /* fr */,
-				F81F3BCF25D0925500520946 /* it */,
-				F81F3BE025D092E800520946 /* pl-PL */,
-				F81F3BF125D093D000520946 /* ru */,
-				F81F3C0225D0946500520946 /* sl */,
-				198D44CC260A3A3400A2B4A2 /* sv */,
-				4798BAD327BA78AF002583BC /* tr */,
-				F8E4DCE62805F7FC007CF822 /* da */,
-				F8D094F52846BDD60087FFEA /* uk */,
-				4166BFC328C3501500199980 /* el */,
+				5406DD42C884C6C1AD28963D /* cs */,
 			);
 			name = HomeView.strings;
 			sourceTree = "<group>";
@@ -5383,24 +5160,7 @@
 		F8B48AA222B2FA9A009BCC01 /* CalibrationRequest.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8B48AA322B2FA9A009BCC01 /* en */,
-				F8B48B0922B37C83009BCC01 /* zh */,
-				F86A3C6F247718C700EE7E46 /* ar */,
-				2867F5CF25BC209600AA1E98 /* fi */,
-				F81F36F925C157E600520946 /* pt */,
-				F81F39A925C5FAF500520946 /* nl */,
-				F81F39DE25C6168100520946 /* de */,
-				F81F3A6725C9E5A800520946 /* es */,
-				CE1B2FD625D0264A00F642F5 /* fr */,
-				F81F3BCB25D0924600520946 /* it */,
-				F81F3BDC25D092D800520946 /* pl-PL */,
-				F81F3BED25D093BB00520946 /* ru */,
-				F81F3BFE25D0945700520946 /* sl */,
-				198D44C8260A3A3300A2B4A2 /* sv */,
-				4798BACF27BA7896002583BC /* tr */,
-				F8E4DCE22805F7FB007CF822 /* da */,
-				F8D094F12846BDD60087FFEA /* uk */,
-				4166BFBF28C3501500199980 /* el */,
+				40FC0FBA7147A5934C6FD697 /* cs */,
 			);
 			name = CalibrationRequest.strings;
 			sourceTree = "<group>";
@@ -5408,23 +5168,7 @@
 		F8BDD436221A0349006EAB84 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8BDD437221A0349006EAB84 /* en */,
-				F8BDD43B221A096D006EAB84 /* nl */,
-				F8B48AC722B37BE6009BCC01 /* sl */,
-				F8B48AD322B37C01009BCC01 /* ru */,
-				F8B48AEC22B37C4A009BCC01 /* pl-PL */,
-				F8B48AF822B37C5C009BCC01 /* it */,
-				F8B48B0422B37C67009BCC01 /* fr */,
-				F8B48B1022B37C84009BCC01 /* zh */,
-				F889CB97236D89C800A81068 /* de */,
-				F86A3C74247718C700EE7E46 /* ar */,
-				2867F5D425BC209A00AA1E98 /* fi */,
-				F81F36FE25C1581000520946 /* pt */,
-				F81F3A6C25C9E5A800520946 /* es */,
-				198D44CD260A3A3400A2B4A2 /* sv */,
-				4798BAD427BA78C3002583BC /* tr */,
-				F8E4DCE72805F7FC007CF822 /* da */,
-				4166BFC428C3501500199980 /* el */,
+				BFA88F5603A9D657028E225A /* cs */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -5432,24 +5176,7 @@
 		F8BDD444221C9D0D006EAB84 /* Common.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8BDD443221C9D0D006EAB84 /* en */,
-				F8BDD445221C9D10006EAB84 /* nl */,
-				F8B48B0E22B37C84009BCC01 /* zh */,
-				F8C5EBEE22F5A52800563B5F /* pt */,
-				F86A3C70247718C700EE7E46 /* ar */,
-				2867F5D025BC209600AA1E98 /* fi */,
-				F81F39DF25C6168400520946 /* de */,
-				F81F3A6825C9E5A800520946 /* es */,
-				CE1B2FD825D0264A00F642F5 /* fr */,
-				F81F3BCC25D0924B00520946 /* it */,
-				F81F3BDD25D092DD00520946 /* pl-PL */,
-				F81F3BEE25D093C000520946 /* ru */,
-				F81F3BFF25D0945A00520946 /* sl */,
-				198D44C9260A3A3300A2B4A2 /* sv */,
-				4798BAD027BA789B002583BC /* tr */,
-				F8E4DCE32805F7FB007CF822 /* da */,
-				F8D094F22846BDD60087FFEA /* uk */,
-				4166BFC028C3501500199980 /* el */,
+				EA809739A2C4440B94BE22A3 /* cs */,
 			);
 			name = Common.strings;
 			sourceTree = "<group>";
@@ -5457,24 +5184,7 @@
 		F8BDD44A221C9D70006EAB84 /* ErrorMessages.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8BDD449221C9D70006EAB84 /* en */,
-				F8B48B0F22B37C84009BCC01 /* zh */,
-				F86A3C72247718C700EE7E46 /* ar */,
-				2867F5D225BC209900AA1E98 /* fi */,
-				F81F36FA25C157F200520946 /* pt */,
-				F81F39AB25C5FB0B00520946 /* nl */,
-				F81F39E125C6168A00520946 /* de */,
-				F81F3A6A25C9E5A800520946 /* es */,
-				CE1B2FD325D0264900F642F5 /* fr */,
-				F81F3BCE25D0925200520946 /* it */,
-				F81F3BDF25D092E400520946 /* pl-PL */,
-				F81F3BF025D093CB00520946 /* ru */,
-				F81F3C0125D0946100520946 /* sl */,
-				198D44CB260A3A3300A2B4A2 /* sv */,
-				4798BAD227BA78A9002583BC /* tr */,
-				F8E4DCE52805F7FC007CF822 /* da */,
-				F8D094F42846BDD60087FFEA /* uk */,
-				4166BFC228C3501500199980 /* el */,
+				1C7E73DF2A8DEDD2A6B9B886 /* cs */,
 			);
 			name = ErrorMessages.strings;
 			sourceTree = "<group>";
@@ -5482,24 +5192,7 @@
 		F8BDD457221DEF22006EAB84 /* SettingsViews.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8BDD456221DEF22006EAB84 /* en */,
-				F8BDD458221DEF24006EAB84 /* nl */,
-				F8B48B1222B37C84009BCC01 /* zh */,
-				F846CDD623046BAE00DCF016 /* pt */,
-				F86A3C77247718C700EE7E46 /* ar */,
-				F817702A2491860F00AA3600 /* fr */,
-				2867F5D725BC209B00AA1E98 /* fi */,
-				F81F39E525C616AD00520946 /* de */,
-				F81F3A6F25C9E5A800520946 /* es */,
-				F81F3BD225D0927700520946 /* it */,
-				F81F3BE325D0932700520946 /* pl-PL */,
-				F81F3BF425D093F200520946 /* ru */,
-				F88EC12325F6CFB200DF0EAF /* sl */,
-				198D44D1260A3A3400A2B4A2 /* sv */,
-				4798BAD627BA7943002583BC /* tr */,
-				F8E4DCEA2805F7FC007CF822 /* da */,
-				F8D094F82846BDD60087FFEA /* uk */,
-				4166BFC728C3501500199980 /* el */,
+				B1F778D4215C529A8A6F870A /* cs */,
 			);
 			name = SettingsViews.strings;
 			sourceTree = "<group>";
@@ -5507,24 +5200,7 @@
 		F8E6C79324CEC2E3007C1199 /* Snooze.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8E6C79224CEC2E3007C1199 /* en */,
-				2867F5DA25BC209C00AA1E98 /* fi */,
-				F81F370E25C1585500520946 /* pt */,
-				F81F39B225C5FB4700520946 /* nl */,
-				F81F39CB25C6107E00520946 /* ar */,
-				F81F39EA25C616C500520946 /* de */,
-				F81F3A7425C9E5A800520946 /* es */,
-				CE1B2FDE25D0264B00F642F5 /* fr */,
-				F81F3BD625D0929300520946 /* it */,
-				F81F3BE725D0934A00520946 /* pl-PL */,
-				F81F3BF825D0940900520946 /* ru */,
-				F81F3C0725D0949100520946 /* sl */,
-				F81F3C0A25D094D300520946 /* zh */,
-				198D44D7260A3A3400A2B4A2 /* sv */,
-				4798BADB27BA795E002583BC /* tr */,
-				F8E4DCEF2805F7FD007CF822 /* da */,
-				F8D094FD2846BDD70087FFEA /* uk */,
-				4166BFCC28C3501500199980 /* el */,
+				2FC6ACBFBF51D468F675465C /* cs */,
 			);
 			name = Snooze.strings;
 			sourceTree = "<group>";
@@ -5532,24 +5208,7 @@
 		F8EEDD572300136F00D2D610 /* DexcomShareTestResult.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8EEDD562300136F00D2D610 /* en */,
-				F8EEDD612300139800D2D610 /* zh */,
-				F8EEDD622300139A00D2D610 /* pt */,
-				F86A3C71247718C700EE7E46 /* ar */,
-				2867F5D125BC209700AA1E98 /* fi */,
-				F81F39AA25C5FB0700520946 /* nl */,
-				F81F39E025C6168700520946 /* de */,
-				F81F3A6925C9E5A800520946 /* es */,
-				CE1B2FDA25D0264A00F642F5 /* fr */,
-				F81F3BCD25D0924E00520946 /* it */,
-				F81F3BDE25D092E000520946 /* pl-PL */,
-				F81F3BEF25D093C700520946 /* ru */,
-				F81F3C0025D0945E00520946 /* sl */,
-				198D44CA260A3A3300A2B4A2 /* sv */,
-				4798BAD127BA78A0002583BC /* tr */,
-				F8E4DCE42805F7FC007CF822 /* da */,
-				F8D094F32846BDD60087FFEA /* uk */,
-				4166BFC128C3501500199980 /* el */,
+				E57085B44567E70CA70AA3E1 /* cs */,
 			);
 			name = DexcomShareTestResult.strings;
 			sourceTree = "<group>";

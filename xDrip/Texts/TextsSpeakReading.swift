@@ -26,48 +26,19 @@ enum Texts_SpeakReading {
     
     // MARK: - public properties
 
-    /// default language code, value en
-    public static let defaultLanguageCode = "en"
+    /// Czech is the only shipped spoken language in Mmolio Link.
+    public static let defaultLanguageCode = "cs"
     
     // MARK: - public functions
     
-    /// set the language for speak reading texts, default en
-    ///
-    /// Must be a valid language code, example "en-EN" or "en-US" but also "en" is allowed - should be a language code that exists in ConstantsSpeakReadingLanguages - and the corresponding strings file must exist. Example there's only "en" for the moment
-    ///
-    /// if there's no folder languageCode.lproj (example fr.lproj if languageCode would be assigned to "fr") then the default language will be used ie en
+    /// Use Czech, including for installations that previously selected another language.
 public static func setLanguageCode(code:String?) {
-
-        // if code not nil, then newValue will be the code, otherwise newValue will be default languagecode
+        // Previously saved language choices fall back to Czech in Mmolio Link.
         languageCode = defaultLanguageCode
-        if let code = code {languageCode = code}
-        
-        //try to assign path first with the full languagecode
-        if let path = Bundle.main.path(forResource: languageCode, ofType: "lproj") {
-            bundle = Bundle(path: path)
-        } else {
-            // full languageCode doesn't work, try now to split by - and use the first part only
-            // should never be in this branch if ConstantsSpeakReadingLanguages is aligned with actual .lproj folders
-            if languageCode.contains(find: "-") {
-                let indexOfHyphen = languageCode.indexes(of: "-")
-                let languageRange =  languageCode.startIndex..<indexOfHyphen[0]
-                let language = String(languageCode[languageRange])
-                if let path = Bundle.main.path(forResource: language, ofType: "lproj") {
-                    bundle = Bundle(path: path)
-                }
-                languageCode = language
-            } else {
-                // assigning default language code and bundle
-                languageCode = defaultLanguageCode
-                bundle = Bundle(path: Bundle.main.path(forResource: defaultLanguageCode, ofType: "lproj")!)
-            }
-        }
-    
-    // set languageName
-    languageName = ConstantsSpeakReadingLanguages.languageName(forLanguageCode: languageCode)
-
+        bundle = Bundle(path: Bundle.main.path(forResource: defaultLanguageCode, ofType: "lproj")!)
+        languageName = ConstantsSpeakReadingLanguages.languageName(forLanguageCode: languageCode)
     }
-    
+
     // MARK: - texts
     
     static var high:String {

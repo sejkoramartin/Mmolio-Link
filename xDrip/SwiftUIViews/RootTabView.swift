@@ -253,7 +253,7 @@ struct RootTabDependencies {
                     type: .error,
                     description
                 )
-                presentAlert(title: "Backup & Restore", message: error.localizedDescription)
+                presentAlert(title: NSLocalizedString("Backup & Restore", comment: ""), message: error.localizedDescription)
             }
         }
     }

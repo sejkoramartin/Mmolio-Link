@@ -94,29 +94,29 @@ struct AIDStatusView: View {
                         Section(header: Text("System Status")) {
                             // if more than a few seconds difference between the last connection and last loop date, then show the connection separately
                             if deviceStatus.lastLoopDate.timeIntervalSince(deviceStatus.createdAt) > 5 {
-                                row(title: "Last cycle", data: "\(deviceStatus.createdAt.formatted(date: .omitted, time: .shortened)) (\(deviceStatus.createdAt.daysAndHoursAgo(appendAgo: true)))")
+                                row(title: NSLocalizedString("Last cycle", comment: ""), data: "\(deviceStatus.createdAt.formatted(date: .omitted, time: .shortened)) (\(deviceStatus.createdAt.daysAndHoursAgo(appendAgo: true)))")
                             }
                             
                             // show the last loop date only if it exists
                             if deviceStatus.lastLoopDate != .distantPast {
-                                row(title: "Last loop", data: "\(deviceStatus.lastLoopDate.formatted(date: .omitted, time: .shortened)) (\(deviceStatus.lastLoopDate.daysAndHoursAgo(appendAgo: true)))")
+                                row(title: NSLocalizedString("Last loop", comment: ""), data: "\(deviceStatus.lastLoopDate.formatted(date: .omitted, time: .shortened)) (\(deviceStatus.lastLoopDate.daysAndHoursAgo(appendAgo: true)))")
                                 
                                 // if not, show the nil string rather than just hiding the row. This gives context.
                             } else {
-                                row(title: "Last loop", data: nilString)
+                                row(title: NSLocalizedString("Last loop", comment: ""), data: nilString)
                             }
                             
                             // show the active profile if available (AAPS)
                             if let activeProfile = deviceStatus.activeProfile {
-                                row(title: "Active profile", data: activeProfile)
+                                row(title: NSLocalizedString("Active profile", comment: ""), data: activeProfile)
                             }
                             
                             // show the override enabled if application (Loop)
                             if let overrideIsActive = deviceStatus.overrideActive, overrideIsActive, let overrideName = deviceStatus.overrideName {
                                 if let overrideMaxValue = deviceStatus.overrideMaxValue, let overrideMinValue = deviceStatus.overrideMinValue {
-                                    row(title: "Override", data: "\(overrideName) (\(overrideMinValue.mgDlToMmolAndToString(mgDl: isMgDl))-\(overrideMaxValue.mgDlToMmolAndToString(mgDl: isMgDl)))")
+                                    row(title: NSLocalizedString("Override", comment: ""), data: "\(overrideName) (\(overrideMinValue.mgDlToMmolAndToString(mgDl: isMgDl))-\(overrideMaxValue.mgDlToMmolAndToString(mgDl: isMgDl)))")
                                 } else {
-                                    row(title: "Override", data: "\(overrideName)")
+                                    row(title: NSLocalizedString("Override", comment: ""), data: "\(overrideName)")
                                 }
                             }
                             
@@ -134,7 +134,7 @@ struct AIDStatusView: View {
                         
                         Section(header: Text("Uploader")) {
                             if let deviceName = deviceStatus.deviceName() {
-                                row(title: "Device", data: deviceName)
+                                row(title: NSLocalizedString("Device", comment: ""), data: deviceName)
                             }
                             
                             HStack {
@@ -160,51 +160,51 @@ struct AIDStatusView: View {
                         }
                         
                         Section(header: Text("\(deviceStatus.systemName() ?? "AID") Specific")) {
-                            row(title: "Basal rate", data: (deviceStatus.rate?.round(toDecimalPlaces: 2).description ?? "-") + " U/hr")
+                            row(title: NSLocalizedString("Basal rate", comment: ""), data: (deviceStatus.rate?.round(toDecimalPlaces: 2).description ?? "-") + " U/hr")
                             
-                            row(title: "Duration", data: (deviceStatus.duration?.description ?? "-") + " mins")
+                            row(title: NSLocalizedString("Duration", comment: ""), data: (deviceStatus.duration?.description ?? "-") + " mins")
                             
                             if let bolusVolume = deviceStatus.bolusVolume {
-                                row(title: "Auto-bolus given", data: bolusVolume.round(toDecimalPlaces: 2).description + " U")
+                                row(title: NSLocalizedString("Auto-bolus given", comment: ""), data: bolusVolume.round(toDecimalPlaces: 2).description + " U")
                             }
                             
-                            row(title: "IOB", data: (deviceStatus.iob?.round(toDecimalPlaces: 2).stringWithoutTrailingZeroes ?? nilString) + " U")
+                            row(title: NSLocalizedString("IOB", comment: ""), data: (deviceStatus.iob?.round(toDecimalPlaces: 2).stringWithoutTrailingZeroes ?? nilString) + " U")
                             
-                            row(title: "COB", data: (deviceStatus.cob?.round(toDecimalPlaces: 0).stringWithoutTrailingZeroes ?? nilString) + " g")
+                            row(title: NSLocalizedString("COB", comment: ""), data: (deviceStatus.cob?.round(toDecimalPlaces: 0).stringWithoutTrailingZeroes ?? nilString) + " g")
                             
                             if let isf = deviceStatus.isf {
-                                row(title: "ISF", data: isf.round(toDecimalPlaces: 0).stringWithoutTrailingZeroes)
+                                row(title: NSLocalizedString("ISF", comment: ""), data: isf.round(toDecimalPlaces: 0).stringWithoutTrailingZeroes)
                             }
                             
                             if let sensitivityRatio = deviceStatus.sensitivityRatio {
-                                row(title: "Autosens", data: sensitivityRatio.round(toDecimalPlaces: 1).description)
+                                row(title: NSLocalizedString("Autosens", comment: ""), data: sensitivityRatio.round(toDecimalPlaces: 1).description)
                             }
                             
                             if let tdd = deviceStatus.tdd {
-                                row(title: "TDD", data: tdd.round(toDecimalPlaces: 1).description + " U")
+                                row(title: NSLocalizedString("TDD", comment: ""), data: tdd.round(toDecimalPlaces: 1).description + " U")
                             }
                             
                             if let currentTarget = deviceStatus.currentTarget {
-                                row(title: "Current target", data: "\(currentTarget.mgDlToMmolAndToString(mgDl: isMgDl)) \(isMgDl ? Texts_Common.mgdl : Texts_Common.mmol)")
+                                row(title: NSLocalizedString("Current target", comment: ""), data: "\(currentTarget.mgDlToMmolAndToString(mgDl: isMgDl)) \(isMgDl ? Texts_Common.mgdl : Texts_Common.mmol)")
                             }
                             
                             if let eventualBG = deviceStatus.eventualBG {
-                                row(title: "Eventual BG", data: "\(eventualBG.mgDlToMmolAndToString(mgDl: isMgDl)) \(isMgDl ? Texts_Common.mgdl : Texts_Common.mmol)")
+                                row(title: NSLocalizedString("Eventual BG", comment: ""), data: "\(eventualBG.mgDlToMmolAndToString(mgDl: isMgDl)) \(isMgDl ? Texts_Common.mgdl : Texts_Common.mmol)")
                             }
                             
                             if let insulinReq = deviceStatus.insulinReq {
-                                row(title: "Required insulin", data: insulinReq.round(toDecimalPlaces: 2).description + " U")
+                                row(title: NSLocalizedString("Required insulin", comment: ""), data: insulinReq.round(toDecimalPlaces: 2).description + " U")
                             }
                         }
                         
                         Section(header: Text("Pump")) {
                             // show the pump type if available
                             if let pumpModel = deviceStatus.pumpModel {
-                                row(title: "Model", data: "\(deviceStatus.pumpManufacturer ?? "") \(pumpModel)")
+                                row(title: NSLocalizedString("Model", comment: ""), data: "\(deviceStatus.pumpManufacturer ?? "") \(pumpModel)")
                             }
                             
                             if let pumpStatus = deviceStatus.pumpStatus {
-                                row(title: "Status", data: pumpStatus.capitalized)
+                                row(title: NSLocalizedString("Status", comment: ""), data: pumpStatus.capitalized)
                             }
                             
                             HStack {
@@ -234,7 +234,7 @@ struct AIDStatusView: View {
                             }
                             
                             if let baseBasalRate = deviceStatus.baseBasalRate {
-                                row(title: "Scheduled basal rate", data: baseBasalRate.round(toDecimalPlaces: 1).description + " U/hr")
+                                row(title: NSLocalizedString("Scheduled basal rate", comment: ""), data: baseBasalRate.round(toDecimalPlaces: 1).description + " U/hr")
                             }
                         }
                         
@@ -247,17 +247,17 @@ struct AIDStatusView: View {
                                     }
                                     
                                 } else {
-                                    Text("Nothing enacted or suggested in current Nightscout response at \(deviceStatus.updatedDate.formatted(date: .omitted, time: .shortened))")
+                                    Text(String(format: NSLocalizedString("No action in the current Nightscout response at %@", comment: ""), deviceStatus.updatedDate.formatted(date: .omitted, time: .shortened)))
                                 }
                             }
                         }
                         
                         // Diagnostic timestamps
                         Section(header: Text("Debug")) {
-                            row(title: "Last Nightscout check", data: deviceStatus.lastCheckedDate.formatted(date: .omitted, time: .standard))
-                            row(title: "Last device status update", data: deviceStatus.updatedDate.formatted(date: .omitted, time: .standard))
-                            row(title: "Created at", data: deviceStatus.createdAt.formatted(date: .omitted, time: .standard))
-                            row(title: "Last loop date", data: deviceStatus.lastLoopDate.formatted(date: .omitted, time: .standard))
+                            row(title: NSLocalizedString("Last Nightscout check", comment: ""), data: deviceStatus.lastCheckedDate.formatted(date: .omitted, time: .standard))
+                            row(title: NSLocalizedString("Last device status update", comment: ""), data: deviceStatus.updatedDate.formatted(date: .omitted, time: .standard))
+                            row(title: NSLocalizedString("Created at", comment: ""), data: deviceStatus.createdAt.formatted(date: .omitted, time: .standard))
+                            row(title: NSLocalizedString("Last loop date", comment: ""), data: deviceStatus.lastLoopDate.formatted(date: .omitted, time: .standard))
                         }
                         
                     }
@@ -274,23 +274,23 @@ struct AIDStatusView: View {
                     List {
                         Section(header: Text("Current Profile Information")) {
                             if let profileName = profile.profileName {
-                                row(title: "Name", data: profileName)
+                                row(title: NSLocalizedString("Name", comment: ""), data: profileName)
                             }
                             
-                            row(title: "Started", data: profile.startDate != .distantPast ? "\(profile.startDate.daysAndHoursAgo(appendAgo: true))" : nilString)
+                            row(title: NSLocalizedString("Started", comment: ""), data: profile.startDate != .distantPast ? "\(profile.startDate.daysAndHoursAgo(appendAgo: true))" : nilString)
                             
-                            row(title: "Stored by", data: profile.enteredBy ?? nilString)
+                            row(title: NSLocalizedString("Stored by", comment: ""), data: profile.enteredBy ?? nilString)
                             
-                            row(title: "Timezone", data: profile.timezone ?? nilString)
+                            row(title: NSLocalizedString("Timezone", comment: ""), data: profile.timezone ?? nilString)
                             
                             if let isMgDl = profile.isMgDl {
-                                row(title: "Units", data: isMgDl ? Texts_Common.mgdl : Texts_Common.mmol)
+                                row(title: NSLocalizedString("Units", comment: ""), data: isMgDl ? Texts_Common.mgdl : Texts_Common.mmol)
                             }
                             
                             if let dia = profile.dia {
-                                row(title: "DIA", data: "\(dia.stringWithoutTrailingZeroes) \(Texts_Common.hours)")
+                                row(title: NSLocalizedString("DIA", comment: ""), data: "\(dia.stringWithoutTrailingZeroes) \(Texts_Common.hours)")
                             } else {
-                                row(title: "DIA", data: nilString)
+                                row(title: NSLocalizedString("DIA", comment: ""), data: nilString)
                             }
                         }
                         

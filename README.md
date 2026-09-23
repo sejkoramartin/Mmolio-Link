@@ -2,6 +2,8 @@
 
 Mmolio Link is a focused iPhone CGM companion based on [xDrip4iOS](https://github.com/JohanDegraeve/xdripswift). It keeps xDrip4iOS sensor connectivity, follower data sources, and sharing services, while presenting a simpler Home screen: current glucose, trend, reading age, source, and history graph. The main tabs are Home, Devices, and Settings. Treatments and Statistics are not shown in the main navigation.
 
+The app, its widgets, and the bundled Apple Watch views are intended for Czech users and ship Czech as their only interface localization. New upstream text must be translated before release; `python3 scripts/check-czech-localization.py` checks key and format-argument coverage.
+
 The existing xDrip4iOS bundle identifiers, app group, data model, and Garmin wire format remain unchanged. A signed Mmolio Link build is intended to install as an update over the current xDrip4iOS build from the same Apple developer team, preserving stored data and sensor pairing. **Back up your data before the first migration.** A build signed with another team cannot replace the installed app.
 
 ## Data sources and watches

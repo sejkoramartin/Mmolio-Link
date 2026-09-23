@@ -144,7 +144,7 @@ class SettingsViewSpeakSettingsViewModel: NSObject, SettingsViewModelProtocol {
             //find index for languageCode type currently stored in userdefaults
             var selectedRow:Int?
             if let languageCode = UserDefaults.standard.speakReadingLanguageCode {
-                selectedRow = ConstantsSpeakReadingLanguages.allLanguageNamesAndCodes.codes.firstIndex(of:languageCode)
+                selectedRow = ConstantsSpeakReadingLanguages.allLanguageNamesAndCodes.codes.firstIndex(of:languageCode) ?? 0
             } else {
                 selectedRow = ConstantsSpeakReadingLanguages.allLanguageNamesAndCodes.codes.firstIndex(of:Texts_SpeakReading.defaultLanguageCode)
             }

@@ -1,0 +1,6 @@
+"nightscouttestresult_verificationsuccessfulalerttitle" = "Ověření proběhlo úspěšně";
+"nightscouttestresult_verificationsuccessfulalertbody" = "Vaše stránka Nightscout byla úspěšně ověřena";
+"nightscouttestresult_verificationerroralerttitle" = "Chyba ověření";
+"warningAPIKeyOrURLIsnil" = "Než budete moci spustit test, musí být nastavena vaše adresa URL Nightscout (a volitelně API_SECRET nebo Token).";
+"nightscoutAPIKeyAndURLStartedTitle" = "Ověřování...";
+"nightscoutAPIKeyAndURLStartedBody" = "Ověřovací test Nightscout byl zahájen\n\nTato zpráva by měla zakrátko automaticky zmizet";

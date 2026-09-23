@@ -3,20 +3,8 @@
 /// alphabetically ordered
 enum ConstantsSpeakReadingLanguages: String, CaseIterable {
     
-    case chinese = "Chinese/zh"
-    case dutch = "Dutch/nl"
-    case english = "English/en"
-    case french = "French/fr"
-    case italian = "Italian/it"
-    case polish = "Polish/pl-PL"
-    case portugese_portugal = "Portuguese/pt"
-    case portugese_brasil = "Portuguese (Brazil)/pt-BR"
-    case russian = "Russian/ru"
-    case slovenian = "Slovenian/sl"
-    case spanish_mexico = "Spanish (Mexico)/es-MX"
-    case spanish_spain = "Spanish (Spain)/es-ES"
-    case turkish = "Turkish/tr-TR"
-    
+    case czech = "Čeština/cs"
+
     /// gets all language names and language codes in two arrays
     /// - returns:
     ///     ie part of the case before the / in the first array, part of the case after the / in the second array

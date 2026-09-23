@@ -1,0 +1,9 @@
+"dexcomsharetestresult_verificationsuccessfulalerttitle" = "Ověření proběhlo úspěšně";
+"dexcomsharetestresult_verificationsuccessfulalertbody" = "Váš účet Dexcom Share byl úspěšně ověřen";
+"dexcomsharetestresult_verificationerroralerttitle" = "Chyba ověření";
+"dexcomsharetestresult_SSO_AuthenticateMaxAttemptsExceeed" = "Byl překročen maximální počet pokusů o přihlášení. Počkejte 10 minut a zkuste to znovu.";
+"dexcomsharetestresult_uploadErrorWarning" = "Chyba nahrávání sdílení Dexcom";
+"dexcomsharetestresult_monitored_receiver_sn_doesnotmatch" = "Sériové číslo Dexcom Share neodpovídá sériovému číslu tohoto účtu. Ověřte sériové číslo v nastavení.";
+"dexcomsharetestresult_monitored_receiver_not_assigned_1" = "Zdá se, že ID vysílače nebo sériové číslo";
+"dexcomsharetestresult_monitored_receiver_not_assigned_2" = "není přiřazen";
+"dexcomsharetestresult_monitored_receiver_not_assigned_3" = "K registraci vysílače (G5) nebo sdíleného přijímače (G4) použijte oficiální aplikaci Dexcom \r\n\r\nMožná jen používáte nesprávnou adresu URL, ověřte nastavení „Use URL US?“";

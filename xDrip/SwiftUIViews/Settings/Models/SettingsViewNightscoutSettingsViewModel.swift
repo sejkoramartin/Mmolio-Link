@@ -285,7 +285,7 @@ class SettingsViewNightscoutSettingsViewModel {
                         
                         trace("in testNightscoutCredentials, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, error.localizedDescription)
                         
-                        self.callMessageHandlerInMainThread(title: "URL/Hostname not found!", message: error.localizedDescription)
+                        self.callMessageHandlerInMainThread(title: NSLocalizedString("URL/Hostname not found!", comment: ""), message: error.localizedDescription)
                         
                         return
                         
@@ -332,19 +332,19 @@ class SettingsViewNightscoutSettingsViewModel {
                             
                             trace("in testNightscoutCredentials, API_SECRET is not valid, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, errorMessage)
                             
-                            self.callMessageHandlerInMainThread(title: "API_SECRET is not valid", message: errorMessage)
+                            self.callMessageHandlerInMainThread(title: NSLocalizedString("API_SECRET is not valid", comment: ""), message: errorMessage)
                             
                         } else if UserDefaults.standard.nightscoutAPIKey == nil && UserDefaults.standard.nightscoutToken != nil {
                             
                             trace("in testNightscoutCredentials, Token is not valid, error = %{public}@", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info, errorMessage)
                             
-                            self.callMessageHandlerInMainThread(title: "Token is not valid", message: errorMessage)
+                            self.callMessageHandlerInMainThread(title: NSLocalizedString("Token is not valid", comment: ""), message: errorMessage)
                             
                         } else {
                             
                             trace("in testNightscoutCredentials, URL responds OK but authentication method is missing and cannot be checked", log: self.log, category: ConstantsLog.categoryNightscoutSettingsViewModel, type: .info)
                             
-                            self.callMessageHandlerInMainThread(title: TextsNightscout.verificationSuccessfulAlertTitle, message: "URL responds OK but authentication method is missing and cannot be checked!")
+                            self.callMessageHandlerInMainThread(title: TextsNightscout.verificationSuccessfulAlertTitle, message: NSLocalizedString("URL responds OK but authentication method is missing and cannot be checked!", comment: ""))
                             
                         }
                     

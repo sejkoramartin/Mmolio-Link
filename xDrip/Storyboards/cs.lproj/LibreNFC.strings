@@ -1,0 +1,8 @@
+"scanComplete" = "Skenování senzoru bylo úspěšné";
+"holdTopOfIphoneNearSensor" = "Podržte horní část iPhonu poblíž senzoru, dokud nepřestane vibrovat.";
+"deviceMustSupportNFC" = "Tento iPhone nepodporuje NFC";
+"deviceMustSupportIOS14" = "Chcete-li se připojit k Libre 2, tento iPhone potřebuje upgrade na iOS14";
+"scanComplete" = "Skenování senzoru bylo úspěšné";
+"holdTopOfIphoneNearSensor" = "Podržte horní část iPhonu poblíž senzoru, dokud nepřestane vibrovat.";
+"donotusethelibrelinkapp" = "Připojeno k Libre 2.\n\nUjistěte se, že jste v nastavení iPhonu zakázali oprávnění Bluetooth pro aplikaci Libre.\n\nPokud to neuděláte, při skenování pomocí aplikace Libre přerušíte spojení mezi %@ a Libre 2.\n\nVezměte prosím na vědomí, že po spuštění nového Libre 2 následuje %@ minutové zahřívací období, než získáte údaje.";
+"connectedLibre2DoesNotMatchScannedLibre2" = "Naskenovali jste nový Libre senzor, ale %@ se připojil k jinému senzoru (pravděpodobně k předchozímu). \n\nChcete-li to vyřešit, NESMAZEJTE tento starý senzor zatím. Klikněte na „Odpojit“ nebo „Zastavit skenování“, vraťte se na předchozí obrazovku a přidejte nový CGM typu Libre 2 a znovu naskenujte senzor. \n\n%@ by se nyní měl pokusit připojit k novému senzoru.";

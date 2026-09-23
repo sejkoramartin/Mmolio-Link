@@ -1,0 +1,12 @@
+"screenTitle" = "M5Stack";
+"authenticationFailureWarning" = "Autentizace k M5Stack selhala, buď nastavte předkonfigurované heslo v Nastavení, nebo, pokud M5Stack nemá předkonfigurované heslo, resetujte M5Stack. M5Stack se nyní odpojí. Kliknutím můžete provést nový pokus";
+"blePasswordMissingWarning" = "Heslo je potřeba nastavit v Nastavení";
+"m5StackResetRequiredWarning" = "M5Stack musí být resetován, aby bylo možné vygenerovat nové dočasné heslo. Až budete hotovi, klikněte";
+"m5StackSoftWhereHelpCellText" = "Kde najít software M5Stack?";
+"m5StickCSoftWhereHelpCellText" = "Kde najít software M5StickC?";
+"m5StackSoftWareHelpText" = "Přejít na";
+"m5StackViewscreenTitle" = "M5Stack";
+"m5StickCViewscreenTitle" = "M5StickC";
+"deviceMustBeConnectedToPowerOff" = "M5Stack musí být připojen, aby bylo možné jej vypnout";
+"powerOffConfirm" = "Opravdu chcete vypnout M5Stack?";
+"powerOff" = "Vypnout";

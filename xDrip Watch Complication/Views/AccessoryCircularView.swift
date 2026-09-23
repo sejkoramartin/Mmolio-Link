@@ -19,7 +19,7 @@ extension XDripWatchComplication.EntryView {
                 .widgetBackground(backgroundView: Color.clear)
         } else {
             Gauge(value: entry.widgetState.bgValueInMgDl ?? entry.widgetState.gaugeModel().nilValue, in: entry.widgetState.gaugeModel().minValue...entry.widgetState.gaugeModel().maxValue) {
-                Text("Not shown")
+                Text("Nezobrazuje se")
             } currentValueLabel: {
                 Text(entry.widgetState.bgValueStringInUserChosenUnit())
                     .font(.system(size: 20)).bold()

@@ -1,0 +1,31 @@
+"treatments_title" = "Léčba";
+"treatments_new_button" = "Nové";
+"treatments_new_entry" = "Nová léčba";
+"treatments_carbs_with_unit" = "Sacharidy (g)";
+"treatments_insulin_with_unit" = "inzulín (U)";
+"treatments_exercise_with_unit" = "Cvičení (min)";
+"treatments_carbs_unit" = "g";
+"treatments_insulin_unit" = "U";
+"treatments_exercise_unit" = "min";
+"treatments_carbs" = "Sacharidy";
+"treatments_insulin" = "Bolus";
+"treatments_exercise" = "Cvičení";
+"treatments_bgcheck" = "Kontrola BG";
+"treatments_question_mark" = "?";
+"treatments_success" = "Úspěch";
+"treatments_sync_complete" = "Synchronizace dokončena.";
+"treatments_filterTreatmentsLabel" = "Filtr";
+"treatments_cannotStoreFutureBGCheck" = "Kontrolu BG nelze v budoucnu uložit.\n\nIbude uložena v aktuálním čase.";
+"treatments_automaticBasal" = "Automatická bazální";
+
+/* Section heading when choosing a new treatment type. */
+"treatments_treatmentType" = "Typ ošetření";
+
+/* Long-acting basal injection entry */
+"treatments_basalInjection" = "Bazální (injekce)";
+"treatments_insulinDescription" = "Typ inzulínu";
+"treatments_insulinDescriptionPlaceholder" = "např. Tresiba";
+"treatments_invalidBasalInjectionValueMessage" = "Zadejte prosím celý počet jednotek větší než nula.";
+
+/* Footer shown when a new basal injection is prefilled from the previous entry. */
+"treatments_basalInjectionCopiedFooter" = "Bazální množství a typ byly zkopírovány z předchozího záznamu";

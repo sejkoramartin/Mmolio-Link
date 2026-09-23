@@ -1,0 +1,7 @@
+"enter_calibration_value" = "Zadejte hodnotu kalibrace";
+"calibration_title" = "Kalibrace";
+"calibration_notification_title" = "Kalibrace";
+"calibration_notification_body" = "Klikněte na Oznámení ke kalibraci";
+"singlePointCalibration" = "Standardní";
+"multiPointCalibration" = "Vícebodový";
+"previousCalibrationPrefillMessage" = "Vaše předchozí kalibrace z %@ je předvyplněná. Před potvrzením jej zkontrolujte podle aktuálního stavu měřiče.";
