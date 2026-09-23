@@ -21,3 +21,5 @@ To update from upstream, merge changes from `JohanDegraeve/xdripswift` into a re
 ## Attribution and license
 
 Mmolio Link is a derivative of xDrip4iOS by Johan Degraeve and contributors and is distributed under the [GNU GPL v3.0](LICENSE). The original [documentation](https://xdrip4ios.readthedocs.io/) remains useful for sensor compatibility and setup. This is experimental software, not an approved medical device; confirm readings with approved equipment before treatment decisions.
+
+This derivative was first modified for Mmolio Link on 23 September 2026. The original copyright notices remain in the source files. Recipients of a binary should use the source commit associated with its build to obtain the corresponding source, build scripts, and license.

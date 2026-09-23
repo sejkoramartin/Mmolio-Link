@@ -358,10 +358,10 @@ enum ConstantsHomeView {
     }()
   
     /// github.com repository URL for the project
-    static let gitHubURL = "https://github.com/JohanDegraeve/xdripswift"
+    static let gitHubURL = "https://github.com/sejkoramartin/Mmolio-Link"
 
     /// github.com repository name for the project
-    static let gitHubRepositoryName = "xdripswift"
+    static let gitHubRepositoryName = "Mmolio-Link"
 
     /// license type for the project
     static let licenseType = "GNU GPL v3"

@@ -138,7 +138,8 @@ struct SettingsViewInfoViewModel:SettingsViewModelProtocol {
             return .nothing
             
         case .licenseInfo:
-            return SettingsSelectedRowAction.showInfoText(title: ConstantsHomeView.applicationName, message: Texts_HomeView.licenseInfo + ConstantsHomeView.infoEmailAddress + "\n\nOpenAPS / LoopKit\n" + TherapyModelAttribution.notice)
+            let notice = "Mmolio Link is based on xDrip4iOS by Johan Degraeve and contributors. Modified 23 September 2026. Distributed under GNU GPL v3, without warranty. Complete source code and the license are available at " + ConstantsHomeView.gitHubURL
+            return SettingsSelectedRowAction.showInfoText(title: ConstantsHomeView.applicationName, message: notice + "\n\nOpenAPS / LoopKit\n" + TherapyModelAttribution.notice)
 
         case .showGitHub:
             guard let url = URL(string: ConstantsHomeView.gitHubURL) else { return .nothing}
