@@ -70,7 +70,7 @@
 "settingsviews_showOriginalBGReadings" = "Původní hodnoty";
 "settingsviews_showSensorNoise" = "Šum senzoru";
 "settingsviews_sensorHealthNotifications" = "Upozornění na stav senzoru";
-"settingsviews_sensorHealthNotificationsFooter" = "Ovládá volitelná systémová upozornění na dlouhodobý šum senzoru, plochý signál a dočasné problémy se senzorem. Porucha senzoru/přenašeče se konfiguruje s ostatními alarmy. Zavřít banner Home zůstane k dispozici.";
+"settingsviews_sensorHealthNotificationsFooter" = "Ovládá volitelná systémová upozornění na dlouhodobý šum senzoru, plochý signál a dočasné problémy se senzorem. Porucha senzoru nebo vysílače se nastavuje s ostatními alarmy. Informační panel na úvodní obrazovce zůstane dostupný.";
 "settingsviews_urgentHighValue" = "Naléhavá vysoká hodnota";
 "settingsviews_urgentHighValueMessage" = "Zadejte hodnotu glukózy pro urgentní vysoký práh.";
 "settingsviews_highValue" = "Vysoká hodnota";

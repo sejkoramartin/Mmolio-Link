@@ -809,7 +809,7 @@ private extension BluetoothPeripheralDetailState {
 
     func transmitterIdDisplayText() -> String? {
         if transmitterIdTempValue == ConstantsBluetoothPairing.dummyDexcomG7TypeTransmitterId || transmitterIdTempValue == "DX" {
-            return "Automatic"
+            return NSLocalizedString("Automatic", comment: "")
         }
 
         return transmitterIdTempValue
@@ -2620,7 +2620,7 @@ private extension BluetoothPeripheralDetailState {
 
     func libre2SensorStartText(libre2: Libre2) -> String {
         guard let sensorTimeInMinutes = libre2.sensorTimeInMinutes else {
-            return "Not Connected"
+            return NSLocalizedString("notConnected", tableName: "BluetoothPeripheralView", comment: "")
         }
 
         let startDate = Date(timeIntervalSinceNow: -Double(sensorTimeInMinutes * 60))

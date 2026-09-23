@@ -3,8 +3,8 @@
 "calibrate" = "Kalibrovat";
 "lock" = "Zámek";
 "unlock" = "Odemknout";
-"screenlocktitle" = "Zámek obrazovky povolen";
-"screenlockinfo" = "Obrazovka tak zůstane vzhůru, dokud nepřejdete do jiné aplikace nebo nekliknete na Odemknout.\r\n\nIDoporučujeme ponechat telefon připojený k nabíječce, aby nedošlo k vybití baterie.";
+"screenlocktitle" = "Zamčení obrazovky je zapnuté";
+"screenlockinfo" = "Obrazovka zůstane zapnutá, dokud nepřejdete do jiné aplikace nebo neklepnete na Odemknout.\r\n\nDoporučujeme ponechat telefon připojený k nabíječce, aby se nevybila baterie.";
 "statusactiontitle" = "Stav";
 "scanbluetoothdeviceactiontitle" = "Vyhledejte vysílač";
 "forgetbluetoothdeviceactiontitle" = "Zapomeňte na vysílač";
@@ -181,14 +181,14 @@
 "sensorHealthFlatlineTitle" = "Neměnný signál senzoru";
 "sensorHealthFlatlineGuidance" = "Hodnoty se 30 minut nezměnily. To obvykle znamená, že senzor selhal nebo mu skončila životnost.";
 "sensorHealthTemporaryIssueTitle" = "Dočasný problém se senzorem";
-"sensorHealthTemporaryIssueGuidance" = "Dočasný problém se senzorem na 3 hodiny. Zkontrolujte pomocí měřiče a postupujte podle pokynů výrobce.";
+"sensorHealthTemporaryIssueGuidance" = "Dočasný problém se senzorem trvá 3 hodiny. Zkontrolujte glykemii glukometrem a řiďte se pokyny výrobce.";
 "sensorHealthSensorFailedTitle" = "Senzor selhal";
 "sensorHealthSensorFailedGuidance" = "Byla hlášena porucha senzoru. Vyměňte senzor.";
 "sensorHealthTransmitterFailedTitle" = "Porucha vysílače";
 "sensorHealthTransmitterFailedGuidance" = "Byla hlášena porucha vysílače. Zkontrolujte nebo vyměňte.";
 "sensorHealthTestPersistentNoise" = "Otestujte trvalý šum za 5 sekund";
 "sensorHealthTestFlatline" = "Otestujte plochý signál za 5 sekund";
-"sensorHealthTestTemporaryIssue" = "Otestujte dočasné vydání za 5 sekund";
+"sensorHealthTestTemporaryIssue" = "Otestovat dočasný problém za 5 sekund";
 "sensorHealthTestSensorFailure" = "Otestujte poruchu senzoru za 5 sekund";
 "sensorHealthTestTransmitterFailure" = "Otestujte poruchu vysílače za 5 sekund";
 "noSensorCodeSelectedMessage" = "Pokud na vysílači již probíhá relace senzoru, aplikace použije tuto relaci se svými stávajícími požadavky na kalibraci.\n\nZahájení nové relace bez kódu vyžaduje kalibrace po zahřátí a poté pravidelně. Vypnutím připomenutí kalibrace aplikace tyto požadavky neodstraníte.";

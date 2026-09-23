@@ -29,9 +29,9 @@ struct AIDStatusView: View {
         var name: String {
             switch self {
             case .deviceStatus:
-                return "Device Status"
+                return "Stav zařízení"
             case .profile:
-                return "Profile"
+                return "Profil"
             }
         }
     }
@@ -159,10 +159,10 @@ struct AIDStatusView: View {
                             }
                         }
                         
-                        Section(header: Text("\(deviceStatus.systemName() ?? "AID") Specific")) {
+                        Section(header: Text("\(deviceStatus.systemName() ?? "AID") – podrobnosti")) {
                             row(title: NSLocalizedString("Basal rate", comment: ""), data: (deviceStatus.rate?.round(toDecimalPlaces: 2).description ?? "-") + " U/hr")
                             
-                            row(title: NSLocalizedString("Duration", comment: ""), data: (deviceStatus.duration?.description ?? "-") + " mins")
+                            row(title: NSLocalizedString("Duration", comment: ""), data: (deviceStatus.duration?.description ?? "-") + " min")
                             
                             if let bolusVolume = deviceStatus.bolusVolume {
                                 row(title: NSLocalizedString("Auto-bolus given", comment: ""), data: bolusVolume.round(toDecimalPlaces: 2).description + " U")
@@ -239,7 +239,7 @@ struct AIDStatusView: View {
                         }
                         
                         if deviceStatus.reason != nil {
-                            Section(header: Text("\(deviceStatus.systemName() ?? "AID") response")) {
+                            Section(header: Text("Odpověď systému \(deviceStatus.systemName() ?? "AID")")) {
                                 if let reasonValuesArray = deviceStatus.reasonValuesArray() {
                                     ForEach(reasonValuesArray, id: \.self) { reasonValue in
                                         Text(reasonValue.trimmingCharacters(in: .whitespaces))

@@ -49,13 +49,13 @@
 "dexcomG7BluetoothSlot" = "Bluetooth kanál";
 "dexcomG7MobileAppSlot" = "Slot 2: Mobilní aplikace (výchozí)";
 "dexcomG7MobileAppSlotShort" = "Mobilní aplikace";
-"dexcomG7MedicalDeviceSlot" = "Slot 1: Přijímač nebo čerpadlo";
+"dexcomG7MedicalDeviceSlot" = "Slot 1: Přijímač nebo pumpa";
 "dexcomG7MedicalDeviceSlotShort" = "Pumpa";
 "dexcomG7SmartWatchSlot" = "Slot 3: Chytré hodinky";
 "dexcomG7SmartWatchSlotShort" = "Chytré hodinky";
 "dexcomG7MobileAppSlotFooter" = "Kanál mobilní aplikace (slot 2) je výchozí a je aktuálně ověřeným nativním připojením G7.";
 "dexcomG7MedicalDeviceSlotFooter" = "Kanál přijímače nebo pumpy používá ověřovací slot 1.";
-"dexcomG7SmartWatchSlotFooter" = "Kanál Smart Watch používá tovární autentizační slot 3.";
+"dexcomG7SmartWatchSlotFooter" = "Kanál chytrých hodinek používá tovární ověřovací pozici 3.";
 "runningInCoexistenceMode" = "Běží v režimu koexistence";
 "runningInPrimaryMode" = "Běží v primárním režimu";
 "nfcScanNeeded" = "Je potřeba skenování NFC";
@@ -157,12 +157,12 @@
 "signalStrengthStrong" = "Silný";
 "signalStrengthLastMeasurement" = "Poslední měření";
 // Generic heartbeat subscription controls.
-"heartbeat.title" = "Předplatné";
-"heartbeat.mode" = "Režim předplatného";
-"heartbeat.mode.automatic" = "Svobodný";
-"heartbeat.mode.all" = "všechny";
-"heartbeat.footer.automatic" = "Automaticky vybere jeden podporovaný kanál Bluetooth pro aktualizace srdečního tepu, čímž omezí počet odběrů na minimum. Pokud se předplatné nezdaří, je vyzkoušen jiný kanál.";
-"heartbeat.footer.all" = "Přihlásí se k odběru všech podporovaných kanálů Bluetooth a umožňuje aktualizace z kteréhokoli z nich, aby poskytovaly tep.";
+"heartbeat.title" = "Odběry Bluetooth";
+"heartbeat.mode" = "Režim odběru";
+"heartbeat.mode.automatic" = "Jeden kanál";
+"heartbeat.mode.all" = "Všechny kanály";
+"heartbeat.footer.automatic" = "Automaticky vybere jeden podporovaný kanál Bluetooth pro probouzecí signály. Pokud se odběr nepodaří, zkusí jiný kanál.";
+"heartbeat.footer.all" = "Odebírá aktualizace ze všech podporovaných kanálů Bluetooth. Signál pro probuzení může přijít z kteréhokoli z nich.";
 "heartbeat.simpleFooter" = "Změny se projeví při dalším připojení.";
 
 "signalStrengthDisconnected" = "Odpojeno";
