@@ -600,7 +600,6 @@ struct SettingsViewGroupedSettingsViewModel: SettingsViewModelProtocol, Settings
                                 [
                                     SettingsViewHomeScreenSettingsViewModel(rowGroup: .layout),
                                     SettingsViewHomeScreenSettingsViewModel(rowGroup: .mainChart),
-                                    SettingsViewHomeScreenSettingsViewModel(rowGroup: .treatments),
                                     SettingsViewHomeScreenSettingsViewModel(rowGroup: .screenLockLink)
                                 ]
                             }
@@ -615,22 +614,6 @@ struct SettingsViewGroupedSettingsViewModel: SettingsViewModelProtocol, Settings
                             title: Texts_SettingsView.glucoseRangesSectionTitle,
                             onlineHelpTopic: .glucoseDisplay,
                             providers: { [SettingsViewHomeScreenSettingsViewModel(rowGroup: .glucoseRanges)] }
-                        )
-                    }
-                ),
-                SettingsGroupedRow(
-                    id: "general.treatmentSettings",
-                    title: TherapyTexts.text("treatmentSettings"),
-                    settingsScreen: { TreatmentSettingsViewModel.screen }
-                ),
-                SettingsGroupedRow(
-                    id: "glucoseDisplay.statistics",
-                    title: Texts_SettingsView.sectionTitleStatistics,
-                    settingsScreen: {
-                        SettingsScreen(
-                            title: Texts_SettingsView.sectionTitleStatistics,
-                            onlineHelpTopic: .glucoseDisplay,
-                            providers: { [SettingsViewStatisticsSettingsViewModel()] }
                         )
                     }
                 )

@@ -324,8 +324,6 @@ struct RootTabDependencies {
 struct RootTabView: View {
     private enum Tab: Hashable {
         case home
-        case treatments
-        case statistics
         case bluetooth
         case settings
     }
@@ -500,34 +498,6 @@ struct RootTabView: View {
                     .tag(Tab.home)
                     .tabItem {
                         tabLabel(title: tabTitles.home, systemImage: "drop.fill")
-                    }
-
-                    tabContent { dependencies in
-                        NavigationStack {
-                            TreatmentsView(coreDataManager: dependencies.coreDataManager)
-                        }
-                        .tint(ConstantsAppColors.navigationTint)
-                    }
-                    .tag(Tab.treatments)
-                    .tabItem {
-                        tabLabel(title: tabTitles.treatments, systemImage: "list.clipboard.fill")
-                    }
-
-                    Group {
-                        if let dependencies = stateModel.dependencies {
-                            RootStatisticsTabView(dependencies: dependencies)
-                        } else {
-                            ZStack {
-                                ConstantsAppColors.background
-                                    .ignoresSafeArea()
-
-                                ProgressView()
-                            }
-                        }
-                    }
-                    .tag(Tab.statistics)
-                    .tabItem {
-                        tabLabel(title: tabTitles.statistics, systemImage: "chart.bar.xaxis")
                     }
 
                     tabContent { dependencies in

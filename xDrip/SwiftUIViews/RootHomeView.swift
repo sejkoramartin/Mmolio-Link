@@ -256,39 +256,7 @@ struct RootHomeView: View {
 
     @ViewBuilder
     private func rootContent() -> some View {
-        if state.usesScreenLockNightLayout {
-            GeometryReader { geometry in
-                nightLockContent(size: geometry.size)
-                    .onAppear {
-                        applyClockModeRange(for: geometry.size)
-                    }
-                    .onChange(of: geometry.size) { newSize in
-                        applyClockModeRange(for: newSize)
-                    }
-            }
-        } else if UIDevice.current.userInterfaceIdiom == .pad {
-            GeometryReader { geometry in
-                Group {
-                    if IPadLayoutClass.resolve(
-                        isPad: true,
-                        width: geometry.size.width,
-                        usesAccessibilityText: dynamicTypeSize.isAccessibilitySize
-                    ) == .compact {
-                        phoneContent()
-                    } else {
-                        ipadContent(size: geometry.size)
-                    }
-                }
-                .onAppear {
-                    applyIPadChartRange(for: geometry.size)
-                }
-                .onChange(of: geometry.size) { newSize in
-                    applyIPadChartRange(for: newSize)
-                }
-            }
-        } else {
-            phoneContent()
-        }
+        phoneContent()
     }
 
     /// Keeps the established iPhone Clock Mode hierarchy isolated while giving iPad a horizontal,
@@ -423,27 +391,43 @@ struct RootHomeView: View {
     /// The original iPhone hierarchy remains isolated here so the tablet composition cannot alter
     /// phone sizing, ordering, or gesture behaviour.
     private func phoneContent() -> some View {
-        // Resolve once so an asynchronous cache completion cannot disagree with row contents.
-        let loop = loopDisplayState
         return VStack(spacing: Layout.sectionSpacing) {
-            homeHeader
+            Text("Mmolio Link")
+                .font(.headline)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            if let issue = sensorHealthIssueManager.visibleIssue {
+                SensorHealthBannerView(
+                    issue: issue,
+                    action: {
+                        switch issue.destination {
+                        case .sensorManagement: actions.showSensorManagement()
+                        case .bluetoothPeripheral: actions.showBluetooth()
+                        }
+                    },
+                    dismiss: sensorHealthIssueManager.dismissVisibleIssue
+                )
+            }
 
             VStack(spacing: Layout.rowSpacing) {
-                glucoseStatusRow
+                RootHomeGlucoseReadingView(
+                    state: glucoseDisplayState,
+                    isScreenLocked: false,
+                    nightLockStatus: nightLockStatus
+                )
+                .frame(maxWidth: .infinity)
+                .frame(height: Layout.glucoseStatusRowHeight)
 
-                if showsTherapyRow(loop) {
-                    RootHomeLoopView(state: loop, actions: actions)
-                }
+                configuredMainChart(chartState: visibleChartState, showsTreatments: false)
+                    .frame(maxHeight: .infinity)
+                    .layoutPriority(1)
 
-                mainChart
-                .frame(maxHeight: .infinity)
-                .layoutPriority(1)
-
-                if state.visibility.showsMiniChart {
-                    miniChart
-                }
-
-                lowerStatusContent()
+                RootHomeDataSourceView(
+                    state: state.dataSource,
+                    sensorState: state.sensor,
+                    sensorNoiseState: state.sensorNoise,
+                    action: actions.hideFollowerUrl
+                )
             }
             .frame(maxHeight: .infinity, alignment: .top)
         }
@@ -718,7 +702,7 @@ struct RootHomeView: View {
         RootHomeMainChartView(
             selectedRange: $selectedRange,
             showsTreatments: showsTreatments,
-            allowsTherapyCharts: !state.isScreenLocked,
+            allowsTherapyCharts: false,
             chartState: chartState,
             isLoading: isLoadingChart,
             scrollCoordinator: scrollCoordinator,

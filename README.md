@@ -1,81 +1,23 @@
-# xDrip4iOS
+# Mmolio Link
 
-**[Online documentation: compatibility, installation, setup and troubleshooting](https://xdrip4ios.readthedocs.io/en/latest/)**
+Mmolio Link is a focused iPhone CGM companion based on [xDrip4iOS](https://github.com/JohanDegraeve/xdripswift). It keeps xDrip4iOS sensor connectivity, follower data sources, and sharing services, while presenting a simpler Home screen: current glucose, trend, reading age, source, and history graph. The main tabs are Home, Devices, and Settings. Treatments and Statistics are not shown in the main navigation.
 
-xDrip4iOS (`xdripswift`) is a community-developed, open-source iOS app for displaying and managing real-time continuous glucose monitor (CGM) data. It can connect directly to a compatible CGM in **Master** mode or retrieve remote readings from an online service in **Follower** mode.
+The existing xDrip4iOS bundle identifiers, app group, data model, and Garmin wire format remain unchanged. A signed Mmolio Link build is intended to install as an update over the current xDrip4iOS build from the same Apple developer team, preserving stored data and sensor pairing. **Back up your data before the first migration.** A build signed with another team cannot replace the installed app.
 
-xDrip4iOS is not related to the xDrip+ project for Android.
+## Data sources and watches
 
-> [!IMPORTANT]
-> xDrip4iOS is experimental software. It is not a regulated medical device and is not approved for making treatment decisions. Never rely on it as the only source of glucose information. Use it at your own risk and confirm readings with approved equipment when necessary.
+Master mode supports the sensor families implemented upstream, including Dexcom G6/G7/ONE/ONE+/Stelo, compatible Libre setups, and Medtrum. Follower mode retains Nightscout, Dexcom Share, LibreLinkUp, CareLink, Shared Calendar, and Medtrum EasyView. Availability depends on device, region, and upstream support.
 
-## Current capabilities
+The existing Garmin integration sends glucose, trend, and reading time to Mmolio Bridge and Mmolio DataField. Mmolio WatchFace continues reading the bridge complication. Support for other watch brands can be added behind a shared watch-delivery interface; it is not implemented yet.
 
-### Glucose data sources
+## Build and releases
 
-Master mode currently includes:
+The `main` branch is checked by GitHub Actions with an unsigned iOS build and the Garmin/G7 compatibility tests. The TestFlight workflow is manual and needs the same six signing secrets used by the existing xDrip4iOS fork: `TEAMID`, `GH_PAT`, `FASTLANE_KEY_ID`, `FASTLANE_ISSUER_ID`, `FASTLANE_KEY`, and `MATCH_PASSWORD`. Secrets are scoped to repositories and are not copied automatically.
 
-- Dexcom G6, Anubis and ONE
-- Dexcom G7, ONE+ and Stelo over native Bluetooth, in Primary or Coexistence mode
-- Libre 2 and Libre 2 Plus EU sensors over direct Bluetooth
-- Compatible Libre sensors through MiaoMiao or Nano/Bubble/Bubble Mini transmitters
+The current project still includes upstream internal code for Treatments, Statistics, and other services. Keeping those internals during the first UI migration protects sensor communication, history, data persistence, follower mode, and upgrades. Code can be removed later only after its dependencies have been traced and migration tested.
 
-Follower mode supports:
+To update from upstream, merge changes from `JohanDegraeve/xdripswift` into a review branch and rerun the unsigned build and Garmin/G7 tests before merging to `main`. Preserve the bundle identifiers, persistence model, Garmin wire format, and user-visible Mmolio Link layout.
 
-- Nightscout, including Loop and OpenAPS/AAPS status data
-- Dexcom Share
-- Shared Calendar
-- CareLink
-- LibreLinkUp and LibreLinkUp Russia
-- Medtrum EasyView
+## Attribution and license
 
-Sensor support depends on the exact model, region, transmitter firmware and whether an official CGM app must run alongside xDrip4iOS. Check the [compatibility guide](https://xdrip4ios.readthedocs.io/en/latest/#compatible-sensors) before choosing hardware or changing your setup.
-
-### App features
-
-- Adaptive iPhone and iPad Home layouts, including Clock Mode and configurable glucose chart ranges
-- Optional sensor-noise bands, reading history, treatments, local IOB and COB estimates, statistics and time-in-range views
-- Custom glucose, missed-reading, device and battery alerts, with scheduled spoken readings and trends
-- Nightscout upload and synchronization, Dexcom Share upload and Apple Health integration
-- Apple Watch app and complications
-- Home Screen and Lock Screen widgets, StandBy support, Live Activities and Dynamic Island layouts, including sensor warm-up status
-- Siri and Shortcuts access to the latest reading and Speak Glucose controls
-- Optional calendar events and contact-image displays
-- AID status displays and open-source data sharing with Loop/iAPS and Trio
-- Contextual links to the online documentation and a filterable Activity Log for troubleshooting
-- Bluetooth connection diagnostics, signal-strength history and per-device battery history
-- Bluetooth output to M5Stack and M5StickC companion displays
-
-## Requirements
-
-- An iPhone or iPad running iOS/iPadOS 16.2 or later
-- Apple Watch Series 4 or newer running watchOS 10 or later for Watch features
-- An internet connection for follower modes and cloud services
-- A compatible CGM setup for Master mode
-
-Some extensions and system features require newer hardware or iOS versions.
-
-## Availability and development
-
-xDrip4iOS is primarily a do-it-yourself app and does not have an open public TestFlight. The supported installation paths are building from source with Xcode on a Mac or creating a personal TestFlight build with GitHub Actions and Fastlane.
-
-The current project is configured for Xcode 26, Swift 5, iOS 16.2 and watchOS 10. Stable releases are maintained on `master`, while ongoing development is merged through `develop`.
-
-The maintained [installation documentation](https://xdrip4ios.readthedocs.io/en/latest/install/install/) describes the available options and requirements. The repository also contains the supporting [personal TestFlight documentation](fastlane/testflight.md).
-
-## Documentation and support
-
-- [User documentation](https://xdrip4ios.readthedocs.io/en/latest/)
-- [Installation and setup](https://xdrip4ios.readthedocs.io/en/latest/install/install/)
-- [Troubleshooting](https://xdrip4ios.readthedocs.io/en/latest/troubleshoot/)
-- [GitHub issues](https://github.com/JohanDegraeve/xdripswift/issues) for verified, reproducible bugs
-
-Please use the community support channels linked from the documentation for general setup help rather than opening a bug report or contacting maintainers privately.
-
-## Contributing
-
-Bug fixes, translations, documentation improvements and new features are welcome. Base development work on the `develop` branch and open a pull request with a clear description of the change and how it was tested.
-
-## License
-
-xDrip4iOS is released under the [GNU General Public License v3.0](LICENSE).
+Mmolio Link is a derivative of xDrip4iOS by Johan Degraeve and contributors and is distributed under the [GNU GPL v3.0](LICENSE). The original [documentation](https://xdrip4ios.readthedocs.io/) remains useful for sensor compatibility and setup. This is experimental software, not an approved medical device; confirm readings with approved equipment before treatment decisions.

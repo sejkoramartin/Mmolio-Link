@@ -1,9 +1,12 @@
-name: Garmin branch compile check
+name: Mmolio Link compile check
 
 on:
   push:
     branches:
-      - feature/garmin-watch
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -18,7 +21,7 @@ jobs:
         run: bash tests/g7-trend/migration.sh
       - name: Resolve Swift packages
         run: xcodebuild -resolvePackageDependencies -project xdrip.xcodeproj -scheme xdrip
-      - name: Compile xDrip without signing
+      - name: Compile Mmolio Link without signing
         run: |
           set -o pipefail
           xcodebuild \

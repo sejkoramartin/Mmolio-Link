@@ -1,0 +1,32 @@
+name: Mmolio Link TestFlight
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: macos-26
+    env:
+      TEAMID: ${{ secrets.TEAMID }}
+      GH_PAT: ${{ secrets.GH_PAT }}
+      FASTLANE_KEY_ID: ${{ secrets.FASTLANE_KEY_ID }}
+      FASTLANE_ISSUER_ID: ${{ secrets.FASTLANE_ISSUER_ID }}
+      FASTLANE_KEY: ${{ secrets.FASTLANE_KEY }}
+      MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check signing configuration
+        run: |
+          for key in TEAMID GH_PAT FASTLANE_KEY_ID FASTLANE_ISSUER_ID FASTLANE_KEY MATCH_PASSWORD; do
+            if [ -z "${!key}" ]; then
+              echo "::error::$key is not configured in this repository"
+              exit 1
+            fi
+          done
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Build signed app
+        run: bundle exec fastlane ios build_xdrip4ios
+      - name: Upload to TestFlight
+        run: bundle exec fastlane ios release
